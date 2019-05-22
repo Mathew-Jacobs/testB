@@ -1,0 +1,14 @@
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\Portlets.Service.deps.json
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\Portlets.Service.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\Portlets.Service.pdb
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\System.Configuration.xml
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\bin\Release\netstandard2.0\System.Security.xml
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csprojAssemblyReference.cache
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csproj.CoreCompileInputs.cache
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.AssemblyInfoInputs.cache
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.AssemblyInfo.cs
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csproj.CopyComplete
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.pdb

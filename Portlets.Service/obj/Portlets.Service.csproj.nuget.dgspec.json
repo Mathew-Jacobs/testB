@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj",
+        "projectName": "Portlets.Service",
+        "projectPath": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj",
+        "packagesPath": "C:\\Users\\mathew.jacobs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mathew.jacobs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.6.9, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

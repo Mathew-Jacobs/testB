@@ -1,0 +1,45 @@
+﻿body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding: 20px 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.test {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-template-rows: auto;
+    padding: 0 5px;
+}
+
+.main-text {
+    font-size: 18px;
+}
+
+.portlet-iframe {
+    width: 360px;
+    height: 130px;
+    padding: 20px 10px;
+    background-color: #580054;
+    color: white;
+}
+
+.sinclair-red {
+    background-color: #AC1A2F;
+}
