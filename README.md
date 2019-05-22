@@ -12,7 +12,6 @@
 ## Installation
 
 > Everything needed to get started
-> Images of what it should look like
 
 ### Prerequisits
 
