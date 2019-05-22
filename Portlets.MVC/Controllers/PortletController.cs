@@ -21,6 +21,10 @@ namespace Portlets.MVC.Controllers
         // Using Colleague API
         public ActionResult AccountSummary(string Id)
         {
+            if (Id.Length > 7)
+            {
+                Id = utility.TrimId(Id);
+            }
             if (string.IsNullOrEmpty(Id))
             {
                 return HttpNotFound();
@@ -43,5 +47,4 @@ namespace Portlets.MVC.Controllers
             return View(obj);
         }
     }
-
 }

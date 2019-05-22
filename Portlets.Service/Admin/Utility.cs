@@ -78,6 +78,28 @@ namespace Portlets.Service.Admin
 
             return client.Execute(request);
         }
+
+        /// <summary>
+        /// Makes the imputted tartanId the correct length for the colleague Api
+        /// </summary>
+        /// <param name="Id">tartanId</param>
+        /// <returns>formatted tartanId</returns>
+        public string TrimId(string Id)
+        {
+            while (Id.Length > 7)
+            {
+                if (Id[0] == '0')
+                {
+                    Id = Id.Substring(1);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            return Id;
+        }
     }
 
     public class RequestHeader
