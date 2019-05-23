@@ -1,0 +1,86 @@
+﻿@model Portlets.MVC.Models.AcademicData
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Unofficial-Transcript.css" />
+</head>
+
+<h2>Unofficial Transcript</h2>
+
+<div class="flex-wrapper">
+    @foreach (var term in Model.AcademicTerms)
+    {
+        <div>
+
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td colspan="9">
+                            <h3>
+                                @term.TermId
+                            </h3>
+                        </td>
+                    </tr>
+
+                    @foreach (var course in term.AcademicCredits)
+                    {
+                    <tr>
+                        <td colspan="2">
+                            @course.CourseName
+                        </td>
+                        <td colspan="5">
+                            @course.Title
+                        </td>
+                        <td align="right">
+                            @Math.Round(course.CompletedCredit, 2).ToString("0.00")
+                        </td>
+                        <td align="right">
+                            @course.VerifiedGradeId
+                        </td>
+                    </tr>
+                    }
+
+                    <tr>
+                        <td></td>
+                        <td colspan="7">
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="7">
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            TERM TOTALS
+                        </td>
+                        <td></td>
+                        <td colspan="3" align="right">
+                            CRED
+                        </td>
+                        <td colspan="1">
+                            GPA
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                        <td align="right">
+                            @Math.Round(term.Credits, 2).ToString("0.00")
+                        </td>
+                        <td align="right">
+                            @Math.Round(term.GradePointAverage, 2).ToString("0.00")
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

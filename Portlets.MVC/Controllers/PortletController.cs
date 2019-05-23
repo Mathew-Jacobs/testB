@@ -21,13 +21,17 @@ namespace Portlets.MVC.Controllers
         // Using Colleague API
         public ActionResult AccountSummary(string Id)
         {
-            if (Id.Length > 7)
-            {
-                Id = utility.TrimId(Id);
-            }
             if (string.IsNullOrEmpty(Id))
             {
                 return HttpNotFound();
+            }
+            if (Id.Length > 7)
+            {
+                Id = utility.TrimId(Id);
+                if (string.IsNullOrEmpty(Id))
+                {
+                    return HttpNotFound();
+                }
             }
 
             string bearerToken = admin.Login();

@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url("/Assets/unofficial.png");
+    background-size: 200px;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+    .flex-wrapper > div {
+        width: 50%;
+        min-width: 450px;
+        margin: 0 auto;
+    }
+
+        .flex-wrapper > div > table {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+td {
+    padding: 3px 5px;
+}
+
+    td hr {
+        margin: 5px 0;
+    }
