@@ -1,6 +1,8 @@
 <img src="https://uportal5.sinclair.edu/web/css/icons/icomoon_59_icons/PNG/mysinclair-logo.png" title="My Sinclair" alt="My Sinclair">
+
 # Portlet MVC
 > MVC for creating portlet content
+
 ## Table of Contents
 - [Installation](#installation)
 
