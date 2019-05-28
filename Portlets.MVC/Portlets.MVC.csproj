@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bg-60.png" />
     <Content Include="Assets\README\VSCommunity.png" />
     <Content Include="Assets\unofficial.png" />
     <Content Include="Content\bootstrap-theme.css" />

@@ -6,20 +6,19 @@
 .flex-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-    .flex-wrapper > div {
-        width: 50%;
-        min-width: 450px;
+.transcript-column {
+    width: 450px;
+    background: url(../../Assets/bg-60.png);
+}
+
+    .transcript-column > table {
+        width: 400px;
         margin: 0 auto;
     }
-
-        .flex-wrapper > div > table {
-            width: 400px;
-            margin: 0 auto;
-        }
 
 td {
     padding: 3px 5px;
@@ -28,3 +27,24 @@ td {
     td hr {
         margin: 5px 0;
     }
+
+.sticky-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background: url(../../Assets/bg-60.png);
+    height: 400px;
+    width: 350px;
+    position: sticky;
+    top: 10px;
+    border: solid 1px #e6e6e6;
+    padding: 0 10px;
+}
+
+
+@media only screen and (max-width: 816px) {
+    .sticky-sidebar {
+        position: unset;
+    }
+}

@@ -39,6 +39,52 @@ namespace Portlets.MVC.Models
     public class AcademicTerm
     {
         public string TermId { get; set; }
+
+        public string TermSeason
+        {
+            get
+            {
+                var season = TermId.Substring(3);
+                switch (season)
+                {
+                    case "WI":
+                        return "Winter";
+                    case "SP":
+                        return "Spring";
+                    case "SU":
+                        return "Summer";
+                    case "FA":
+                        return "Fall";
+                    case "SUA":
+                        return "Summer A";
+                    case "SUB":
+                        return "Summer B";
+                    case "SUC":
+                        return "Summer C";
+                    case "SUD":
+                        return "Summer D";
+                    default:
+                        return null;
+                }
+
+            }
+        }
+        public string TermYear
+        {
+            get
+            {
+                var today = int.Parse(DateTime.Now.Year.ToString().Substring(2));
+                var year = TermId.Substring(0, 2);
+                if (int.Parse(year) > today)
+                {
+                    return $"19{year}";
+                }
+                else
+                {
+                    return $"20{year}";
+                }
+            }
+        }
         public double GradePointAverage { get; set; }
         public double Credits { get; set; }
         public int ContinuingEducationUnits { get; set; }
@@ -87,8 +133,54 @@ namespace Portlets.MVC.Models
         public List<AcademicTerm> AcademicTerms { get; set; }
         public List<NonTermAcademicCredit> NonTermAcademicCredits { get; set; }
         public GradeRestriction GradeRestriction { get; set; }
-        public int TotalCreditsCompleted { get; set; }
-        public int OverallGradePointAverage { get; set; }
+        public double TotalCreditsCompleted
+        {
+            get
+            {
+                var totalCredits = 0d;
+                string[] acceptedGrades = { "A", "B", "C", "D", "F", "Z" };
+                foreach (var term in AcademicTerms)
+                {
+                    foreach (var course in term.AcademicCredits)
+                    {
+                        if (acceptedGrades.Contains(course.VerifiedGradeId))
+                        {
+                            totalCredits += course.CompletedCredit;
+                        }
+                    }
+                }
+                return totalCredits;
+            }
+        }
+        public double OverallGradePointAverage
+        {
+            get
+            {
+                var totalCredits = TotalCreditsCompleted;
+                var totalGPoints = 0d;
+                string[] acceptedGrades = { "A", "B", "C", "D", "F", "Z" };
+                if (totalCredits > 0)
+                {
+                    foreach (var term in AcademicTerms)
+                    {
+                        foreach (var course in term.AcademicCredits)
+                        {
+                            if (acceptedGrades.Contains(course.VerifiedGradeId))
+                            {
+                                totalGPoints += course.GradePoints;
+                            }
+                        }
+                    }
+                    return totalGPoints / totalCredits;
+                }
+                else
+                {
+                    return 0d;
+                }
+            }
+        }
         public object StudentId { get; set; }
     }
+
+
 }

@@ -11,37 +11,109 @@
 <h2>Unofficial Transcript</h2>
 
 <div class="flex-wrapper">
-    @foreach (var term in Model.AcademicTerms)
-    {
+    <div class="sticky-sidebar">
         <div>
-
-            <table>
-                <tbody>
+            <div>
+                <h4 style="font-weight: bold">Grades</h4>
+                <small>
+                    Grades used in the calculation of GPA
+                </small>
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <th>
+                                Grade
+                            </th>
+                            <th>
+                                Points
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                A
+                            </td>
+                            <td>
+                                4
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                B
+                            </td>
+                            <td>
+                                3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                C
+                            </td>
+                            <td>
+                                2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                D
+                            </td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                F
+                            </td>
+                            <td>
+                                0
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Z
+                            </td>
+                            <td>
+                                0 <small>(Did not attend class)</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    To see the meaning of other grades, simply hover over them and the definition will pop up.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="transcript-column">
+        <table>
+            <tbody>
+                @foreach (var term in Model.AcademicTerms)
+                {
 
                     <tr>
                         <td colspan="9">
                             <h3>
-                                @term.TermId
+                                @term.TermSeason, @term.TermYear
                             </h3>
                         </td>
                     </tr>
 
-                    @foreach (var course in term.AcademicCredits)
+                    foreach (var course in term.AcademicCredits)
                     {
-                    <tr>
-                        <td colspan="2">
-                            @course.CourseName
-                        </td>
-                        <td colspan="5">
-                            @course.Title
-                        </td>
-                        <td align="right">
-                            @Math.Round(course.CompletedCredit, 2).ToString("0.00")
-                        </td>
-                        <td align="right">
-                            @course.VerifiedGradeId
-                        </td>
-                    </tr>
+                        <tr>
+                            <td colspan="2">
+                                @course.CourseName
+                            </td>
+                            <td colspan="5">
+                                @course.Title
+                            </td>
+                            <td align="right">
+                                @Math.Round(course.CompletedCredit, 2).ToString("0.00")
+                            </td>
+                            <td align="right">
+                                @course.VerifiedGradeId
+                            </td>
+                        </tr>
                     }
 
                     <tr>
@@ -79,8 +151,8 @@
                             @Math.Round(term.GradePointAverage, 2).ToString("0.00")
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
