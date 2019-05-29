@@ -238,7 +238,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:43</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>05/29/2019 14:28:04</publishTime>
+      <publishTime>05/29/2019 14:58:07</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>05/21/2019 16:11:34</publishTime>
