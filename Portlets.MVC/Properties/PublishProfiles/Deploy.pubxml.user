@@ -9,6 +9,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>C:\Users\mathew.jacobs\source\repos\Portlets\Build</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="Assets/bg-60.png">
+      <publishTime>05/28/2019 11:25:07</publishTime>
+    </File>
+    <File Include="Assets/README/VSCommunity.png">
+      <publishTime>05/22/2019 16:49:55</publishTime>
+    </File>
+    <File Include="Assets/Sinclair-Logo-White.svg">
+      <publishTime>05/29/2019 13:12:09</publishTime>
+    </File>
+    <File Include="Assets/unofficial.png">
+      <publishTime>05/09/2019 15:00:37</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
@@ -25,16 +37,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/18/2018 08:44:54</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>05/22/2019 14:22:26</publishTime>
+      <publishTime>05/29/2019 14:52:15</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>05/22/2019 14:22:26</publishTime>
+      <publishTime>05/29/2019 14:52:15</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
-      <publishTime>05/22/2019 11:09:22</publishTime>
+      <publishTime>05/29/2019 14:52:14</publishTime>
     </File>
     <File Include="bin/Portlets.Service.pdb">
-      <publishTime>05/22/2019 11:09:22</publishTime>
+      <publishTime>05/29/2019 14:52:14</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>02/27/2019 20:13:34</publishTime>
@@ -225,6 +237,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>05/20/2019 14:42:43</publishTime>
     </File>
+    <File Include="Content/Individual_Views/Unofficial-Transcript.css">
+      <publishTime>05/29/2019 14:28:04</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>05/21/2019 16:11:34</publishTime>
     </File>
@@ -309,6 +324,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Styles/main.css">
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
+    <File Include="Views/UnofficialTranscript/Index.cshtml">
+      <publishTime>05/29/2019 14:41:59</publishTime>
+    </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
@@ -316,7 +334,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/22/2019 14:22:26</publishTime>
+      <publishTime>05/29/2019 14:52:15</publishTime>
     </File>
   </ItemGroup>
 </Project>
