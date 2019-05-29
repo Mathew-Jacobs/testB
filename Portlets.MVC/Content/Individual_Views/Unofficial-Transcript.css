@@ -4,6 +4,7 @@
 }
 
 .flex-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,11 +13,13 @@
 
 .transcript-column {
     width: 450px;
+    max-width: 100vw;
     background: url(../../Assets/bg-60.png);
 }
 
     .transcript-column > table {
         width: 400px;
+        max-width: calc(100vw - 30px);
         margin: 0 auto;
     }
 
@@ -32,19 +35,84 @@ td {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     background: url(../../Assets/bg-60.png);
     height: 400px;
+    max-height: calc(100vh - 120px);
     width: 350px;
+    max-width: calc(100vw - 30px);
     position: sticky;
-    top: 10px;
+    top: 23px;
     border: solid 1px #e6e6e6;
     padding: 0 10px;
+    margin: 23px 0 0;
+    overflow: auto;
 }
 
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+    .tooltip-wrapper .tooltip-text {
+        visibility: hidden;
+        background-color: black;
+        width: 120px;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        position: absolute;
+        top: -5px;
+        right: -130px;
+        z-index: 1;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text {
+        visibility: visible;
+    }
+
+    .tooltip-wrapper .tooltip-text::after {
+        content: " ";
+        position: absolute;
+        top: 15px;
+        right: 100%;
+        margin-top: -5px;
+        border: 5px solid;
+        border-color: transparent black transparent transparent;
+    }
+
+.header-information {
+    padding: 10px 10px;
+    height: 80px;
+}
+
+.logo-wrapper {
+    padding: 0 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 @media only screen and (max-width: 816px) {
+    .flex-wrapper {
+        justify-content: center;
+    }
+
     .sticky-sidebar {
         position: unset;
     }
+}
+
+@media only screen and (max-width: 680px) {
+    .tooltip-wrapper .tooltip-text {
+        left: -130px;
+    }
+
+        .tooltip-wrapper .tooltip-text::after {
+            left: 100%;
+            border-color: transparent transparent transparent black;
+        }
 }

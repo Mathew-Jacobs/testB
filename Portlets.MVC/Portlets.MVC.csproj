@@ -137,6 +137,7 @@
   <ItemGroup>
     <Content Include="Assets\bg-60.png" />
     <Content Include="Assets\README\VSCommunity.png" />
+    <Content Include="Assets\Sinclair-Logo-White.svg" />
     <Content Include="Assets\unofficial.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
