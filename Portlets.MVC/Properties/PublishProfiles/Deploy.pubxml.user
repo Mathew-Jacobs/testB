@@ -27,6 +27,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.pdb">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
+    <File Include="bin/FlexibleConfiguration.dll">
+      <publishTime>06/28/2016 14:43:20</publishTime>
+    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
@@ -36,17 +39,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>02/18/2018 08:44:54</publishTime>
     </File>
+    <File Include="bin/Polyglot.dll">
+      <publishTime>06/28/2016 14:54:52</publishTime>
+    </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>05/29/2019 14:52:15</publishTime>
+      <publishTime>05/30/2019 13:46:24</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>05/29/2019 14:52:15</publishTime>
+      <publishTime>05/30/2019 13:46:24</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
-      <publishTime>05/29/2019 14:52:14</publishTime>
+      <publishTime>05/30/2019 13:46:23</publishTime>
     </File>
     <File Include="bin/Portlets.Service.pdb">
-      <publishTime>05/29/2019 14:52:14</publishTime>
+      <publishTime>05/30/2019 13:46:23</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>02/27/2019 20:13:34</publishTime>
@@ -213,6 +219,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 12:57:34</publishTime>
     </File>
+    <File Include="bin/YamlDotNet.dll">
+      <publishTime>06/08/2016 22:19:42</publishTime>
+    </File>
+    <File Include="bin/YamlDotNet.pdb">
+      <publishTime>06/08/2016 22:19:42</publishTime>
+    </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>05/20/2019 14:42:43</publishTime>
     </File>
@@ -238,7 +250,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:43</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>05/29/2019 14:58:07</publishTime>
+      <publishTime>05/30/2019 10:32:48</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>05/21/2019 16:11:34</publishTime>
@@ -319,13 +331,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/21/2019 14:54:29</publishTime>
+      <publishTime>05/30/2019 10:49:23</publishTime>
     </File>
     <File Include="Views/Styles/main.css">
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>05/29/2019 14:41:59</publishTime>
+      <publishTime>05/30/2019 10:14:51</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -334,7 +346,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/29/2019 14:52:15</publishTime>
+      <publishTime>05/30/2019 13:46:25</publishTime>
     </File>
   </ItemGroup>
 </Project>

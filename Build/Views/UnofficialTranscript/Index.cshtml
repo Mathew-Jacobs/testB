@@ -34,13 +34,12 @@
 
 <div class="header-information sinclair-red">
     <div class="logo-wrapper">
-        <img src="~/Assets/Sinclair-Logo-White.svg" height="60" />
+        <img src="~/Assets/Sinclair-Logo-White.svg" height="40" />
         <h2 style="margin: 0 0 0 10px;">
             Unofficial Transcript
         </h2>
     </div>
 </div>
-
 <div class="flex-wrapper">
     <div class="sticky-sidebar">
         <div>
@@ -115,11 +114,11 @@
             <table style="width: 100%">
                 <tbody>
                     <tr>
-                        <td>Total Credits Earned</td>
+                        <td style="font-weight: bold;">Total Credits Earned</td>
                         <td style="text-align:right;">@Math.Round(Model.TotalCreditsCompleted, 2).ToString("0.00")</td>
                     </tr>
                     <tr>
-                        <td>Cumulative GPA</td>
+                        <td style="font-weight: bold;">Cumulative GPA</td>
                         <td style="text-align:right;">@Math.Round(Model.OverallGradePointAverage, 2).ToString("0.00")</td>
                     </tr>
                 </tbody>
