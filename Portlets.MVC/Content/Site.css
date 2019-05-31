@@ -43,3 +43,21 @@ textarea {
 .sinclair-red {
     background-color: #AC1A2F;
 }
+
+.t-dark-header tr th {
+    background-color: #6f7276;
+    color: white;
+    border: 1px solid white; 
+    border-top: none;
+    border-bottom: none;
+    padding: 2px 0 2px 8px;
+    font-size: x-small;
+}
+
+.t-dark-header tr th:first-child {
+    border-left: none;
+}
+
+.t-dark-header tr th:last-child {
+    border-right: none;
+}

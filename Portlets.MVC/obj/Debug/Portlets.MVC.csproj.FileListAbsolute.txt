@@ -78,3 +78,9 @@ C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\obj\Debug\Portlets.MVC
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\obj\Debug\Portlets.MVC.pdb
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\Portlets.Service.dll
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\Portlets.Service.pdb
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\FlexibleConfiguration.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\Polyglot.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\YamlDotNet.dll
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\Polyglot.xml
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\YamlDotNet.pdb
+C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.MVC\bin\YamlDotNet.xml
