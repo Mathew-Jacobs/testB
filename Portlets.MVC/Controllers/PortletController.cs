@@ -108,6 +108,32 @@ namespace Portlets.MVC.Controllers
 
             return View(books);
         }
+
+        public ActionResult ClassSchedule(string Id)
+        {
+            if (string.IsNullOrEmpty(Id))
+            {
+                return HttpNotFound();
+            }
+            else if (Id.Length > 7)
+            {
+                Id = utility.TrimId(Id);
+                if (string.IsNullOrEmpty(Id))
+                {
+                    return HttpNotFound();
+                }
+            }
+
+            string bearerToken = admin.Login();
+
+            var classSchedule = new ClassSchedule()
+            {
+                CourseSections = GetClassSchedule(Id, bearerToken)
+            };
+
+            return View(classSchedule);
+        }
+
         // Methods
         private AcademicData OrderByTerm(AcademicData academicData)
         {
@@ -281,19 +307,144 @@ namespace Portlets.MVC.Controllers
                     }
                 }
             }
-            var temp = books;
-            for (int i = 0; i < books.Count - 1; i++)
+            List<Book> results = books.Distinct().ToList();
+            return results;
+        }
+
+        private List<CourseInfo> GetClassSchedule(string Id, string bearerToken)
+        {
+            List<CourseInfo> info = new List<CourseInfo>();
+            List<CourseSection> courses = new List<CourseSection>();
+
+            List<CourseCatalog> catalogs = new List<CourseCatalog>();
+            List<string> facultyIds = new List<string>();
+            AcademicData data = GetCurrentClasses(Id, bearerToken);
+            List<Location> loc = GetLocations(bearerToken);
+            string courseIds = "";
+            foreach (var course in data.AcademicTerms[0].AcademicCredits)
             {
-                for (int j = i + 1; j < books.Count; j++)
+                courseIds = courseIds + course.CourseId + ",";
+
+                var keyword = course.CourseName;
+                var term = data.AcademicTerms[0].TermId;
+                var subjectCode = course.CourseName.Split('-')[0];
+                var subjectNum = course.CourseName.Split('-')[1];
+
+                var r = utility.CreateRequest(Method.GET, "https://rest.sinclair.edu/api/1/index.cfm", $"/Bulletin/Sections/{subjectCode}/{subjectNum}/{term.Replace("/", "")}?keyword={course.CourseName}&courseList=any&term={term.Replace("/", "")}&subjectCode={subjectCode}&building=any&courseFormat=all&termFormat=all&creditHoursMin=0&creditHoursMax=15&timeChoice=segments&segOptions=any");
+                dynamic jC = JValue.Parse(r.Content);
+                CourseCatalog obj = jC.ToObject<CourseCatalog>();
+                catalogs.Add(obj);
+            }
+
+            RequestHeader[] headers =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
+            };
+
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/colleagueapi", $"/courses/sections?courseIds={courseIds}", headers);
+            dynamic jsonContent = JValue.Parse(response.Content);
+            List<CourseSection> sections = jsonContent.ToObject<List<CourseSection>>();
+
+            foreach (var course in sections)
+            {
+                if (course.ActiveStudentIds.Contains(Id) && !courses.Contains(course))
                 {
-                    if (books[i].isbn == books[j].isbn && temp.Contains(books[i]))
+                    courses.Add(course);
+                    foreach (var id in course.FacultyIds)
                     {
-                        temp.Remove(books[i]);
+                        if (!facultyIds.Contains(id.ToString()))
+                        {
+                            facultyIds.Add(id.ToString());
+                        }
+                    }
+
+                }
+            }
+            RequestHeader[] facultyHeaders =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken },
+                new RequestHeader() { Key = "Content-Type", Value = "application/json" }
+            };
+            var body = new { FacultyIds = facultyIds.ToArray() };
+            var facultyRe = utility.CreateRequest(Method.POST, "https://api.sinclair.edu/colleagueapi", "/qapi/faculty", headers, body);
+            dynamic jsonFaculty = JValue.Parse(facultyRe.Content);
+            List<Faculty> faculty = jsonFaculty.ToObject<List<Faculty>>();
+            foreach (var course in courses)
+            {
+                course.Faculties = new List<Faculty>();
+                foreach (var id in course.FacultyIds)
+                {
+                    foreach (var person in faculty)
+                    {
+                        if (person.Id == id.ToString())
+                        {
+                            course.Faculties.Add(person);
+                        }
                     }
                 }
             }
-            books = temp;
-            return books;
+
+            foreach (var courseCatalog in catalogs)
+            {
+                foreach (var row in courseCatalog.rows)
+                {
+                    foreach (var section in sections)
+                    {
+                        if (section.ActiveStudentIds.Contains(Id) && row.CourseKey.ToString() == section.Id)
+                        {
+                            foreach (var location in loc)
+                            {
+                                if ((location.Code == section.Location || section.Location == ""))
+                                {
+                                    CourseInfo temp = new CourseInfo()
+                                    {
+                                        CourseId = section.CourseId,
+                                        Instructors = section.Faculties,
+                                        CourseName = row.CourseCode,
+                                        Loc = location,
+                                        Meetings = section.Meetings,
+                                        Title = row.LongName,
+                                        StartDate = section.StartDate,
+                                        EndDate = section.EndDate,
+                                        Room = row.building,
+                                        Section = row.SectionNo.ToString()
+                                    };
+
+                                    info.Add(temp);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return info;
+        }
+
+        private List<Location> GetLocations(string bearerToken)
+        {
+            RequestHeader[] headers =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
+            };
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/colleagueapi", "/locations", headers);
+            dynamic jsonResponse = JValue.Parse(response.Content);
+            return jsonResponse.ToObject<List<Location>>();
+        }
+
+        private static bool FindISBN(Book bk, string isbn)
+        {
+            if (bk.isbn == isbn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

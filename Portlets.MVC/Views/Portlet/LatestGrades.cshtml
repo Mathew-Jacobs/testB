@@ -5,7 +5,12 @@
 }
 
 @{
-    var latestTerm = Model.AcademicTerms.Last();
+    var lastTerm = Model.AcademicTerms.LastIndexOf(Model.AcademicTerms.Last());
+    var latestTerm = Model.AcademicTerms[lastTerm];
+    if (lastTerm != 0)
+    {
+        latestTerm = Model.AcademicTerms[lastTerm - 1];
+    }
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Latest-Grades.css" />
@@ -32,7 +37,7 @@
             @foreach (var course in latestTerm.AcademicCredits)
             {
                 <tr class="space-around">
-                    <td>@course.CourseId</td>
+                    <td>@course.CourseName</td>
                     <td style="max-width: 145px">@course.Title</td>
                     <td style="text-align: center">@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
                     <td style="text-align: center">@course.VerifiedGradeId</td>

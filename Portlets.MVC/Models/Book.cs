@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Portlets.MVC.Models
 {
-    public class Book
+    public class Book : IEquatable<Book>
     {
         public string SectionNo { get; set; }
         public string priceNew { get; set; }
@@ -20,5 +20,21 @@ namespace Portlets.MVC.Models
         public int? edition { get; set; }
         public int CourseNumber { get; set; }
         public string SubjectCode { get; set; }
+
+        public bool Equals(Book book)
+        {
+            if (Object.ReferenceEquals(book, null)) return false;
+
+            if (Object.ReferenceEquals(this, book)) return true;
+
+            return isbn.Equals(book.isbn);
+        }
+
+        public override int GetHashCode()
+        {
+            int hashISBN = isbn == null ? 0 : isbn.GetHashCode();
+            return hashISBN;
+        }
     }
+
 }

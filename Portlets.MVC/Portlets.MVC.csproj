@@ -147,8 +147,12 @@
     <Compile Include="Models\AcademicCredit.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookList.cs" />
+    <Compile Include="Models\ClassSchedule.cs" />
     <Compile Include="Models\CourseCatalog.cs" />
+    <Compile Include="Models\CourseInfo.cs" />
     <Compile Include="Models\CourseSection.cs" />
+    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Router.cs" />
     <Compile Include="Models\StudentFinance.cs" />
     <Compile Include="Models\Term.cs" />
@@ -163,6 +167,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Individual_Views\Booklist.css" />
+    <Content Include="Content\Individual_Views\ClassSchedule.css" />
     <Content Include="Content\Individual_Views\Latest-Grades.css" />
     <Content Include="Content\Individual_Views\Unofficial-Transcript.css" />
     <Content Include="favicon.ico" />
@@ -206,6 +212,7 @@
     <Content Include="Views\UnofficialTranscript\Index.cshtml" />
     <Content Include="Views\Portlet\LatestGrades.cshtml" />
     <Content Include="Views\Portlet\BookList.cshtml" />
+    <Content Include="Views\Portlet\ClassSchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

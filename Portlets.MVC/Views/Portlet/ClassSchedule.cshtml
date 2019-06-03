@@ -1,0 +1,57 @@
+﻿@model Portlets.MVC.Models.ClassSchedule
+
+@{
+    ViewBag.Title = "ClassSchedule";
+    string[] weekdays = { "Sun", "M", "T", "W", "Th", "F", "Sat" };
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/ClassSchedule.css" />
+</head>
+
+<div style="width: 335px">
+    <div class="schedule-striper">
+        @foreach (var course in Model.CourseSections)
+        {
+            <div class="course-row">
+                <div>
+                    <div class="bold">
+                        @course.Title
+                    </div>
+                    <div class="bold" style="font-size: 12px;">
+                        @foreach (var meeting in course.Meetings)
+                        {
+                            if (meeting.StartTime.HasValue && meeting.EndTime.HasValue)
+                            {
+                                <span>
+                                    @String.Format("{0:t}", meeting.StartTime.Value) - @String.Format("{0:t}", meeting.EndTime.Value)
+                                </span>
+                            }
+                            for (var i = 0; i < meeting.Days.Count; i++)
+                            {
+                                if (meeting.Days[i] != meeting.Days.Last())
+                                {
+                                    <span>
+                                        @weekdays[int.Parse(meeting.Days[i].ToString())],
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span>
+                                        @weekdays[int.Parse(meeting.Days[i].ToString())]
+                                    </span>
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="bold" style="color: #6f7276;">
+                        <span>
+                            @course.CourseName
+                        </span>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        }
+    </div>
+</div>

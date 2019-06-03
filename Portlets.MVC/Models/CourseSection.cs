@@ -44,6 +44,7 @@ namespace Portlets.MVC.Models
         public string Location { get; set; }
         public List<Meeting> Meetings { get; set; }
         public List<object> FacultyIds { get; set; }
+        public List<Faculty> Faculties { get; set; }
         public List<object> Books { get; set; }
         public List<object> ActiveStudentIds { get; set; }
         public string LearningProvider { get; set; }
