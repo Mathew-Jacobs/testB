@@ -145,15 +145,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AcademicCredit.cs" />
-    <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\BookList.cs" />
-    <Compile Include="Models\ClassSchedule.cs" />
-    <Compile Include="Models\CourseCatalog.cs" />
-    <Compile Include="Models\CourseInfo.cs" />
-    <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Router.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\StudentFinance.cs" />
     <Compile Include="Models\Term.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

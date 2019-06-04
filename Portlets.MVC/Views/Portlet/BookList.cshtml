@@ -1,4 +1,4 @@
-﻿@model Portlets.MVC.Models.BookList
+﻿@model List<Portlets.MVC.Models.Book>
 
 @{
     ViewBag.Title = "BookList";
@@ -9,7 +9,7 @@
 </head>
 
 <div style="width: 335px;">
-    @foreach (var book in Model.Books)
+    @foreach (var book in Model)
     {
         <div class="book-header">
             <div style="font-weight: bold;">
@@ -34,12 +34,12 @@
                 {
                     case "Req":
                         <div style="color: #ad1d32">
-                            This book is required.
+                            Required
                         </div>
                         break;
                     case "Opt":
                         <div>
-                            This book is optional.
+                            Optional
                         </div>
                         break;
                     default:

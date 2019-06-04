@@ -1,56 +1,92 @@
-﻿@model Portlets.MVC.Models.ClassSchedule
+﻿@model Portlets.MVC.Models.Schedule
 
 @{
     ViewBag.Title = "ClassSchedule";
     string[] weekdays = { "Sun", "M", "T", "W", "Th", "F", "Sat" };
+
+    foreach (var row in Model.rows)
+    {
+        if (!string.IsNullOrEmpty(row.Days))
+        {
+            var builder = new System.Text.StringBuilder();
+            for (var i = 0; i < row.Days.Length; i++)
+            {
+                builder.Append(row.Days[i]);
+                if (i != row.Days.Length - 1)
+                {
+                    builder.Append(',');
+                    builder.Append(' ');
+                }
+            }
+            row.Days = builder.ToString();
+        }
+    }
 }
 
 <head>
     <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/ClassSchedule.css" />
 </head>
 
-<div style="width: 335px">
+<div style="width: 365px">
     <div class="schedule-striper">
-        @foreach (var course in Model.CourseSections)
+        @foreach (var row in Model.rows)
         {
             <div class="course-row">
                 <div>
                     <div class="bold">
-                        @course.Title
+                        @row.LongName
                     </div>
                     <div class="bold" style="font-size: 12px;">
-                        @foreach (var meeting in course.Meetings)
+                        @if (!string.IsNullOrEmpty(row.EndTime) && !string.IsNullOrEmpty(row.StartTime))
                         {
-                            if (meeting.StartTime.HasValue && meeting.EndTime.HasValue)
-                            {
-                                <span>
-                                    @String.Format("{0:t}", meeting.StartTime.Value) - @String.Format("{0:t}", meeting.EndTime.Value)
-                                </span>
-                            }
-                            for (var i = 0; i < meeting.Days.Count; i++)
-                            {
-                                if (meeting.Days[i] != meeting.Days.Last())
-                                {
-                                    <span>
-                                        @weekdays[int.Parse(meeting.Days[i].ToString())],
-                                    </span>
-                                }
-                                else
-                                {
-                                    <span>
-                                        @weekdays[int.Parse(meeting.Days[i].ToString())]
-                                    </span>
-                                }
-                            }
+                            <span>
+                                @DateTime.Parse(row.StartTime).ToString("h:mm t") - @DateTime.Parse(row.EndTime).ToString("h:mm t")
+                            </span>
+                        }
+                        @if (!string.IsNullOrEmpty(row.Days))
+                        {
+                            <span style="margin-left: 3px;">
+                                @row.Days
+                            </span>
                         }
                     </div>
                     <div class="bold" style="color: #6f7276;">
                         <span>
-                            @course.CourseName
+                            @row.SubjectCode
+                        </span>
+                        <span>
+                            @row.CourseNo
+                        </span>
+                        <span style="margin-left:5px;">
+                            Sec @row.SectionNo
                         </span>
                     </div>
                 </div>
-                <div></div>
+                <div style="text-align: right;">
+                    @{var temp = "";
+                    }
+                    @foreach (var meeting in row.dayModels)
+                    {
+                        if (temp != meeting.location)
+                        {
+                            temp = meeting.location;
+                            <div style="font-weight:bold">
+                                @meeting.location
+                            </div>
+                        }
+                    }
+                    @if (!string.IsNullOrEmpty(row.startDate) && !string.IsNullOrEmpty(row.endDate))
+                    {
+                        <div style="color: #6f7276; font-size: 12px; font-weight: bold;">
+                                @DateTime.Parse(row.startDate).ToString("MMM d") - @DateTime.Parse(row.endDate).ToString("MMM d, yyyy")
+                        </div>
+                    }
+                    <div>
+                        <span style="font-weight: bold;">
+                            @row.Faculty
+                        </span>
+                    </div>
+                </div>
             </div>
         }
     </div>
