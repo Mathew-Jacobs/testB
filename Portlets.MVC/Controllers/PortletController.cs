@@ -130,6 +130,30 @@ namespace Portlets.MVC.Controllers
             return View(schedule);
         }
 
+        public ActionResult ImportantDates()
+        {
+            var response = utility.CreateRequest(Method.GET, "https://rest.sinclair.edu/api/1/index.cfm/", "bulletin/reference.KeyDates");
+            dynamic jsonContent = JValue.Parse(response.Content);
+            ImportantDates obj = jsonContent.ToObject<ImportantDates>();
+            return View(obj);
+        }
+
+        public ActionResult FinancialChecklist()
+        {
+            var bearerToken = admin.Login();
+
+            RequestHeader[] headers =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
+            };
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/colleagueapi", "/financial-aid-checklist-items", headers);
+            dynamic jsonContent = JValue.Parse(response.Content);
+            List<FinancialAidChecklist> obj = jsonContent.ToObject<List<FinancialAidChecklist>>();
+            obj.Sort((a, b) => a.ChecklistSortNumber.CompareTo(b.ChecklistSortNumber));
+            return View(obj);
+        }
+
         // Methods
         private AcademicData OrderByTerm(AcademicData academicData)
         {
@@ -190,6 +214,6 @@ namespace Portlets.MVC.Controllers
 
             return sections;
         }
-
+        
     }
 }

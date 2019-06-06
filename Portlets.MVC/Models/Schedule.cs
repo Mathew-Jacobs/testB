@@ -9,7 +9,7 @@ namespace Portlets.MVC.Models
     {
         public int results { get; set; }
         public bool success { get; set; }
-        public List<Row> rows { get; set; }
+        public List<ScheduleRow> rows { get; set; }
     }
 
     public class DayModel
@@ -42,7 +42,7 @@ namespace Portlets.MVC.Models
         public string SubjectCode { get; set; }
     }
 
-    public class Row
+    public class ScheduleRow
     {
         public string startDate { get; set; }
         public string regEndDate { get; set; }

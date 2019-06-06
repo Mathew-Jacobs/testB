@@ -34,7 +34,7 @@
             <div class="course-row">
                 <div>
                     <div class="bold">
-                        @row.LongName
+                        @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(row.LongName.ToLower())
                     </div>
                     <div class="bold" style="font-size: 12px;">
                         @if (!string.IsNullOrEmpty(row.EndTime) && !string.IsNullOrEmpty(row.StartTime))
