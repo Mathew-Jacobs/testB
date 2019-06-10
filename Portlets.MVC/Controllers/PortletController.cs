@@ -132,10 +132,18 @@ namespace Portlets.MVC.Controllers
 
         public ActionResult ImportantDates()
         {
-            var response = utility.CreateRequest(Method.GET, "https://rest.sinclair.edu/api/1/index.cfm/", "bulletin/reference.KeyDates");
-            dynamic jsonContent = JValue.Parse(response.Content);
-            ImportantDates obj = jsonContent.ToObject<ImportantDates>();
-            return View(obj);
+            var bearerToken = admin.Login();
+
+            var obj = GetRegistrationDates(bearerToken);
+            var temp = obj;
+            foreach (var term in obj.ToList())
+            {
+                if (term.EndDate < DateTime.Now)
+                {
+                    temp.Remove(term);
+                }
+            }
+            return View(temp);
         }
 
         public ActionResult FinancialChecklist()
@@ -214,6 +222,18 @@ namespace Portlets.MVC.Controllers
 
             return sections;
         }
-        
+        private List<Term> GetRegistrationDates(string bearerToken)
+        {
+            RequestHeader[] headers =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
+            };
+
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/colleagueapi", $"/terms/registration", headers);
+            dynamic jsonContent = JValue.Parse(response.Content);
+            List<Term> terms = jsonContent.ToObject<List<Term>>();
+            return terms;
+        }
     }
 }
