@@ -1,0 +1,91 @@
+﻿@model List<Portlets.MVC.Models.Book>
+
+@{
+    ViewBag.Title = "BookList";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Booklist.css" />
+</head>
+
+<div style="width: 335px;">
+    @foreach (var book in Model)
+    {
+        <div class="book-header">
+            <div style="font-weight: bold;">
+                <div style="color: #6f7276">
+                    @book.Term
+                </div>
+                <div style="font-size: 18px">
+                    @book.CourseCode
+                </div>
+                <div>
+                    Section: @book.SectionNo
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div>
+                    New: @book.priceNew
+                </div>
+                <div>
+                    Used: @book.priceUsed
+                </div>
+                @switch (book.reqRecOpt)
+                {
+                    case "Req":
+                        <div style="color: #ad1d32">
+                            Required
+                        </div>
+                        break;
+                    case "Opt":
+                        <div>
+                            Optional
+                        </div>
+                        break;
+                    default:
+                        <div></div>
+                        break;
+                }
+            </div>
+        </div>
+        <div style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">
+            @book.title
+        </div>
+        <div>
+            @if (!string.IsNullOrEmpty(book.author))
+            {
+                <div>
+                    <span style="font-weight: bold;">
+                        Author:
+                    </span>
+                    <span>
+                        @book.author
+                    </span>
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(book.edition.ToString()))
+            {
+                <div>
+                    <span style="font-weight: bold;">
+                        Edition:
+                    </span>
+                    <span>
+                        @book.edition
+                    </span>
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(book.isbn))
+            {
+                <div>
+                    <span style="font-weight: bold;">
+                        ISBN:
+                    </span>
+                    <span>
+                        @book.isbn
+                    </span>
+                </div>
+            }
+        </div>
+        <hr />
+    }
+</div>

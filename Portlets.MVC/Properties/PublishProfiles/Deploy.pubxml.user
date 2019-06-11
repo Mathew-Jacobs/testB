@@ -12,6 +12,675 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Assets/bg-60.png">
       <publishTime>05/28/2019 11:25:07</publishTime>
     </File>
+    <File Include="Assets/Icons/svg/account-login.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/account-logout.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/action-redo.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/action-undo.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/align-center.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/align-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/align-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/aperture.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-circle-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-circle-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-circle-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-circle-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-thick-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-thick-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-thick-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-thick-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/arrow-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/audio-spectrum.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/audio.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/badge.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/ban.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bar-chart.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/basket.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/battery-empty.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/battery-full.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/beaker.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bell.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bluetooth.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bold.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bolt.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/book.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bookmark.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/box.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/briefcase.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/british-pound.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/browser.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/brush.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bug.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/bullhorn.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/calculator.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/calendar.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/camera-slr.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/caret-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/caret-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/caret-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/caret-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cart.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/chat.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/check.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/chevron-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/chevron-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/chevron-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/chevron-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/circle-check.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/circle-x.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/clipboard.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/clock.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cloud-download.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cloud-upload.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cloud.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cloudy.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/code.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/cog.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/collapse-down.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/collapse-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/collapse-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/collapse-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/command.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/comment-square.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/compass.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/contrast.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/copywriting.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/credit-card.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/crop.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/dashboard.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/data-transfer-download.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/data-transfer-upload.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/delete.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/dial.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/document.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/dollar.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/double-quote-sans-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/double-quote-sans-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/double-quote-serif-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/double-quote-serif-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/droplet.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/eject.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/elevator.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/ellipses.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/envelope-closed.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/envelope-open.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/euro.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/excerpt.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/expand-down.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/expand-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/expand-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/expand-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/external-link.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/eye.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/eyedropper.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/file.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/fire.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/flag.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/flash.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/folder.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/fork.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/fullscreen-enter.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/fullscreen-exit.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/globe.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/graph.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/grid-four-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/grid-three-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/grid-two-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/hard-drive.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/header.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/headphones.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/heart.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/home.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/image.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/inbox.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/infinity.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/info.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/italic.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/justify-center.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/justify-left.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/justify-right.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/key.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/laptop.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/layers.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/lightbulb.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/link-broken.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/link-intact.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/list-rich.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/list.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/location.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/lock-locked.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/lock-unlocked.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/loop-circular.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/loop-square.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/loop.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/magnifying-glass.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/map-marker.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/map.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-pause.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-play.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-record.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-skip-backward.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-skip-forward.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-step-backward.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-step-forward.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/media-stop.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/medical-cross.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/menu.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/microphone.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/minus.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/monitor.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/moon.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/move.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/musical-note.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/paperclip.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/pencil.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/people.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/person.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/phone.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/pie-chart.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/pin.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/play-circle.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/plus.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/power-standby.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/print.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/project.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/pulse.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/puzzle-piece.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/question-mark.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/rain.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/random.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/reload.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/resize-both.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/resize-height.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/resize-width.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/rss-alt.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/rss.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/script.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/share-boxed.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/share.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/shield.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/signal.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/signpost.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/sort-ascending.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/sort-descending.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/spreadsheet.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/star.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/sun.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/tablet.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/tag.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/tags.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/target.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/task.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/terminal.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/text.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/thumb-down.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/thumb-up.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/timer.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/transfer.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/trash.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/underline.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/vertical-align-bottom.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/vertical-align-center.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/vertical-align-top.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/video.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/volume-high.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/volume-low.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/volume-off.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/warning.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/wifi.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/wrench.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/x.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/yen.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/zoom-in.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
+    <File Include="Assets/Icons/svg/zoom-out.svg">
+      <publishTime>06/10/2019 15:27:27</publishTime>
+    </File>
     <File Include="Assets/README/VSCommunity.png">
       <publishTime>05/22/2019 16:49:55</publishTime>
     </File>
@@ -43,16 +712,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>05/30/2019 13:46:24</publishTime>
+      <publishTime>06/11/2019 12:17:47</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>05/30/2019 13:46:24</publishTime>
+      <publishTime>06/11/2019 12:17:47</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
-      <publishTime>05/30/2019 13:46:23</publishTime>
+      <publishTime>06/11/2019 12:17:46</publishTime>
     </File>
     <File Include="bin/Portlets.Service.pdb">
-      <publishTime>05/30/2019 13:46:23</publishTime>
+      <publishTime>06/11/2019 12:17:46</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>02/27/2019 20:13:34</publishTime>
@@ -249,11 +918,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>05/20/2019 14:42:43</publishTime>
     </File>
+    <File Include="Content/Individual_Views/Booklist.css">
+      <publishTime>06/03/2019 11:11:49</publishTime>
+    </File>
+    <File Include="Content/Individual_Views/ClassSchedule.css">
+      <publishTime>06/03/2019 15:53:31</publishTime>
+    </File>
+    <File Include="Content/Individual_Views/ImportantDates.css">
+      <publishTime>06/10/2019 15:28:55</publishTime>
+    </File>
+    <File Include="Content/Individual_Views/Latest-Grades.css">
+      <publishTime>05/30/2019 15:41:39</publishTime>
+    </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>05/30/2019 10:32:48</publishTime>
+      <publishTime>06/11/2019 09:58:05</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>05/21/2019 16:11:34</publishTime>
+      <publishTime>06/05/2019 09:41:43</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -325,7 +1006,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2019 15:18:41</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
-      <publishTime>05/21/2019 16:10:38</publishTime>
+      <publishTime>06/05/2019 09:59:59</publishTime>
+    </File>
+    <File Include="Views/Portlet/BookList.cshtml">
+      <publishTime>06/04/2019 12:04:56</publishTime>
+    </File>
+    <File Include="Views/Portlet/ClassSchedule.cshtml">
+      <publishTime>06/05/2019 11:40:12</publishTime>
+    </File>
+    <File Include="Views/Portlet/FinancialChecklist.cshtml">
+      <publishTime>06/06/2019 15:38:16</publishTime>
+    </File>
+    <File Include="Views/Portlet/ImportantDates.cshtml">
+      <publishTime>06/10/2019 15:29:58</publishTime>
+    </File>
+    <File Include="Views/Portlet/LatestGrades.cshtml">
+      <publishTime>06/03/2019 10:06:59</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -337,7 +1033,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>05/30/2019 10:14:51</publishTime>
+      <publishTime>06/11/2019 10:18:27</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>

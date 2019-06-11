@@ -4,18 +4,9 @@
     ViewBag.Title = "AccountSummary";
 }
 
-@{ double overdue = 0; }
+@{ double overdue = 0; Portlets.MVC.Models.GeneralItem temp = new Portlets.MVC.Models.GeneralItem();}
 
-<div class="portlet-iframe">
-    <div class="test">
-        <div style="font-size:20px">Student Account</div>
-        <div class="text-right" style="font-size:90%; transform: translateY(32%)">
-            <a style="text-decoration: underline; color: white; opacity: 0.8" href="https://statement.sinclair.edu/Student/Finance">
-                View Details
-            </a>
-        </div>
-    </div>
-    <hr style="margin: 7px 0;" />
+<div style="width: 335px">
     @if (Model.Balance != 0)
     {
         foreach (var term in Model.AccountTerms)
@@ -26,18 +17,26 @@
                 {
                     overdue += item.AmountDue;
                 }
+                if (item.DueDate > temp.DueDate)
+                {
+                    temp = item;
+                }
             }
         }
+        <div class="test">
+            <div>Next payment Due (@temp.DueDate.ToShortDateString())</div>
+            <div class="text-right">@temp.AmountDue</div>
+        </div>
         if (overdue != 0)
         {
-            <div class="test sinclair-red">
-                <div class="main-text text-sinclair-red">Overdue</div>
-                <div class="main-text text-right text-sinclair-red">@overdue</div>
+            <div class="test">
+                <div>Overdue</div>
+                <div class="text-right" style="color: #AC1A2F">@overdue</div>
             </div>
         }
         <div class="test">
-            <div class="main-text">Total Due</div>
-            <div class="main-text text-right">@Model.Balance</div>
+            <div>Total Due</div>
+            <div class="text-right" style="@(overdue != 0 ? "color: #AC1A2F" : "")">@Model.Balance</div>
         </div>
     }
     else
