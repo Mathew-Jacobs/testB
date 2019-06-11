@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json.Linq;
+using Portlets.Service.Admin;
+using RestSharp;
 
 namespace Portlets.MVC.Models
 {
@@ -40,7 +44,6 @@ namespace Portlets.MVC.Models
     public class AcademicTerm
     {
         public string TermId { get; set; }
-
         public string TermSeason
         {
             get
@@ -84,6 +87,44 @@ namespace Portlets.MVC.Models
                 {
                     return $"20{year}";
                 }
+            }
+        }
+        public DateTime TermComparer
+        {
+            get
+            {
+                string month;
+                switch (TermId.Substring(3))
+                {
+                    case "WI":
+                        month = "1";
+                        break;
+                    case "SP":
+                        month = "2";
+                        break;
+                    case "SU":
+                        month = "3";
+                        break;
+                    case "FA":
+                        month = "7";
+                        break;
+                    case "SUA":
+                        month = "3";
+                        break;
+                    case "SUB":
+                        month = "4";
+                        break;
+                    case "SUC":
+                        month = "5";
+                        break;
+                    case "SUD":
+                        month = "6";
+                        break;
+                    default:
+                        month = "10";
+                        break;
+                };
+                return DateTime.ParseExact($"{TermYear}/{month}", "yyyy/M", CultureInfo.CurrentCulture);
             }
         }
         public double GradePointAverage { get; set; }
@@ -136,8 +177,24 @@ namespace Portlets.MVC.Models
         public GradeRestriction GradeRestriction { get; set; }
         public double TotalCreditsCompleted { get; set; }
         public double OverallGradePointAverage { get; set; }
+        public bool HasQuarters
+        {
+            get
+            {
+                if (AcademicTerms[0].TermComparer < DateTime.ParseExact("2012/7", "yyyy/M", CultureInfo.CurrentCulture))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public double PossibleCredits { get; set; }
+        public double CalculatedGPA { get; set; }
         public object StudentId { get; set; }
+
+
     }
-
-
 }

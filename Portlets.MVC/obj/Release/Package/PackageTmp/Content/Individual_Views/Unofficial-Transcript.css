@@ -1,16 +1,23 @@
 ﻿body {
-    background-image: url("../../Assets/unofficial.png");
-    background-size: 200px;
+    background-image: url(../../Assets/CheckeredBg.png);
     background-attachment: fixed;
+    background-size: 2900px;
 }
 
 .flex-wrapper {
     width: 100%;
+    max-width: 940px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 20px;
+    background-image: url("../../Assets/unofficial.png");
+    background-size: 200px;
+    background-attachment: fixed;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 5px;
 }
 
 .transcript-column {
@@ -90,7 +97,6 @@ td {
 
 .header-information {
     padding: 10px 10px;
-    height: 60px;
 }
 
 .logo-wrapper {
@@ -99,6 +105,14 @@ td {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.disclaimer {
+    max-width: 450px;
+    margin: 15px auto;
+    padding: 15px;
+    background: bisque;
+    border-radius: 3px;
 }
 
 
@@ -149,4 +163,10 @@ td {
             left: 100%;
             border-color: transparent transparent transparent black;
         }
+}
+
+@media only screen and (max-width: 958px) {
+    .flex-wrapper {
+        border-radius: 0;
+    }
 }

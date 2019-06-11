@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace Portlets.Service.Admin
 {
     public class Utility
@@ -107,4 +106,6 @@ namespace Portlets.Service.Admin
         public string Key { get; set; }
         public string Value { get; set; }
     }
+
+    
 }

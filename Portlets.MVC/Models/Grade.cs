@@ -9,6 +9,37 @@ namespace Portlets.MVC.Models
     {
         public string Id { get; set; }
         public string LetterGrade { get; set; }
+        public string Symbol
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(LetterGrade))
+                {
+                    char[] array = LetterGrade.ToCharArray();
+                    return new string(Array.FindAll(array, x => !char.IsLetterOrDigit(x)));
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string DisplayGrade
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(LetterGrade))
+                {
+                    char[] array = LetterGrade.ToCharArray();
+                    array = Array.FindAll<char>(array, x => char.IsLetterOrDigit(x));
+                    return new string(array);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
         public int? GradeValue { get; set; }
         public string GradeSchemeCode { get; set; }
         public string Description { get; set; }

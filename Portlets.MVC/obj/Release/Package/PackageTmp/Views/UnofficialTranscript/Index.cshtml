@@ -5,29 +5,7 @@
 }
 
 @{
-    var tooltips = new Dictionary<string, string>()
-{
-        { "AA", "Articulation Agreement" },
-        { "AC", "Articulated Credit" },
-        { "AP", "Advanced Placement" },
-        { "CE", "Continuing Education" },
-        { "CL", "College Level Examination Program" },
-        { "CR", "Transfer Credit" },
-        { "DS", "DANTES (DSST)" },
-        { "I", "Incomplete" },
-        { "IP", " In Progress" },
-        { "N", "Progress" },
-        { "P", "Pass" },
-        { "S", "Satisfactory Completion" },
-        { "U", "Unsatisfactory Progress" },
-        { "WC", "WEBCAPE" },
-        { "W", "Withdrawal" },
-        { "X", "Audit" },
-        { "Y", "Proficiency Credit" },
-        { "-", "No grade was assigned" }
-    };
-    var gradesForGPA = new List<string>()
-    {
+    var gradesForGPA = new List<string>() {
         "A", "B", "C", "D", "F", "Z"
     };
 }
@@ -44,6 +22,12 @@
         </h2>
     </div>
 </div>
+@if (Model.HasQuarters)
+{
+    <div class="disclaimer">
+        Sinclair Community College has operated on the semester system since August 2012. All credit hours earned prior to August 2012 have been converted to semester hours.
+    </div>
+}
 <div class="flex-wrapper">
     <div class="sticky-sidebar">
         <div>
@@ -123,7 +107,7 @@
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Cumulative GPA</td>
-                        <td style="text-align:right;">@Math.Round(Model.OverallGradePointAverage, 2).ToString("0.00")</td>
+                        <td style="text-align:right;">@Math.Round(Model.CalculatedGPA, 2).ToString("0.00")</td>
                     </tr>
                 </tbody>
             </table>
@@ -155,19 +139,28 @@
                             <td align="right">
                                 @Math.Round(course.CompletedCredit, 2).ToString("0.00")
                             </td>
-                            <td align="right">
-                                @if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
+                            <td align="center">
+                                @if (course.GradeInfo != null)
                                 {
-                                    <div class="tooltip-wrapper">
-                                        @course.GradeInfo.LetterGrade
-                                        <span class="tooltip-text">
-                                            @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
-                                        </span>
-                                    </div>
-                                }
-                                else
-                                {
-                                    @course.GradeInfo.LetterGrade
+                                    if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
+                                    {
+                                        <div class="tooltip-wrapper">
+                                            @course.GradeInfo.DisplayGrade
+                                            @if (!string.IsNullOrEmpty(course.GradeInfo.Symbol))
+                                            {
+                                                <span>
+                                                    @course.GradeInfo.Symbol
+                                                </span>
+                                            }
+                                            <span class="tooltip-text">
+                                                @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
+                                            </span>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        @course.GradeInfo.DisplayGrade
+                                    }
                                 }
                             </td>
                         </tr>

@@ -12,6 +12,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Assets/bg-60.png">
       <publishTime>05/28/2019 11:25:07</publishTime>
     </File>
+    <File Include="Assets/CheckeredBg.png">
+      <publishTime>06/11/2019 14:05:49</publishTime>
+    </File>
     <File Include="Assets/Icons/svg/account-login.svg">
       <publishTime>06/10/2019 15:27:27</publishTime>
     </File>
@@ -712,16 +715,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>06/11/2019 12:17:47</publishTime>
+      <publishTime>06/11/2019 16:34:08</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>06/11/2019 12:17:47</publishTime>
+      <publishTime>06/11/2019 16:34:08</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
-      <publishTime>06/11/2019 12:17:46</publishTime>
+      <publishTime>06/11/2019 16:34:08</publishTime>
     </File>
     <File Include="bin/Portlets.Service.pdb">
-      <publishTime>06/11/2019 12:17:46</publishTime>
+      <publishTime>06/11/2019 16:34:08</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>02/27/2019 20:13:34</publishTime>
@@ -931,7 +934,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/30/2019 15:41:39</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>06/11/2019 09:58:05</publishTime>
+      <publishTime>06/11/2019 14:20:03</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>06/05/2019 09:41:43</publishTime>
@@ -1033,7 +1036,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>06/11/2019 10:18:27</publishTime>
+      <publishTime>06/11/2019 15:57:37</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>

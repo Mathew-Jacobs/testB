@@ -17,7 +17,7 @@ namespace Portlets.MVC.Controllers
         readonly Utility utility = new Utility();
 
         // GET: UnofficialTranscript
-        public ActionResult Index(string Id, string searchString)
+        public ActionResult Index(string Id)
         {
             if (string.IsNullOrEmpty(Id))
             {
@@ -47,73 +47,62 @@ namespace Portlets.MVC.Controllers
             AcademicData obj = jsonContent.ToObject<AcademicData>();
             obj = OrderByTerm(obj);
             var grades = GetGrades(bearerToken);
+            List<string> validGrades = new List<string>() { "A", "B", "C", "D", "F", "Z" };
+            Dictionary<string, string> symbolDesc = new Dictionary<string, string>()
+            {
+                { "i", "Course has been completed previously" },
+                { "#", "Grade earned by proficiency examination" },
+                { "//", "Course repeated; Not included in cumulative GPA" },
+                { "=", "Course equates to and replaces a previous course" },
+                { ":", "Grade not included in the Fresh Start Policy Calculation" },
+            };
+            var totalPossCredits = 0d;
+            var totalGradePoints = 0d;
             foreach (var term in obj.AcademicTerms.ToList())
             {
                 foreach (var credit in term.AcademicCredits.ToList())
                 {
                     var grade = new Grade();
                     grade = grades.FirstOrDefault(x => x.Id == credit.VerifiedGradeId);
+                    
                     if (grade == null)
                     {
-                        grade = new Grade();
-                        grade.LetterGrade = " - ";
-                        grade.Description = "No grade was assigned";
+                        grade = new Grade
+                        {
+                            Description = "",
+                            LetterGrade = ""
+                        };
                     }
-                    if (grade.LetterGrade.Contains(":"))
+                    if (symbolDesc.TryGetValue(grade.Symbol, out string val))
                     {
-                        grade.LetterGrade = grade.LetterGrade.Replace(":", "");
+                        grade.Description = val;
                     }
                     credit.GradeInfo = grade;
-                    if (credit.VerifiedGradeId == "CE" || credit.VerifiedGradeId == "L")
+                    if (credit.GradeInfo.LetterGrade == "CE" || credit.GradeInfo.LetterGrade == "L")
                     {
                         term.AcademicCredits.Remove(credit);
                     }
-
+                    if (validGrades.Contains(grade.LetterGrade) && credit.ReplacedStatus != "Replaced")
+                    {
+                        totalPossCredits += credit.Credit;
+                        totalGradePoints += credit.GradePoints;
+                    }
                 }
+                if (term.AcademicCredits.Count == 0)
+                {
+                    obj.AcademicTerms.Remove(term);
+                }
+            }
+            if (totalPossCredits > 0)
+            {
+                obj.CalculatedGPA = totalGradePoints / totalPossCredits;
             }
             return View(obj);
         }
         private AcademicData OrderByTerm(AcademicData academicData)
         {
-            AcademicTerm temp;
-            var now = DateTime.Now;
-            int onlyNinetiesBabies = int.Parse(now.Year.ToString().Substring(2));
-            for (int i = 0; i < academicData.AcademicTerms.Count - 1; i++)
-            {
-                for (int j = i + 1; j < academicData.AcademicTerms.Count; j++)
-                {
-                    var a = int.Parse(academicData.AcademicTerms[j].TermId.Substring(0, 2));
-                    var b = int.Parse(academicData.AcademicTerms[i].TermId.Substring(0, 2));
-                    var sA = academicData.AcademicTerms[j].TermId.Substring(3);
-                    var sB = academicData.AcademicTerms[i].TermId.Substring(3);
-                    if (a < b && ((b <= onlyNinetiesBabies && a <= onlyNinetiesBabies) || (b > onlyNinetiesBabies && a > onlyNinetiesBabies)))
-                    {
-                        temp = academicData.AcademicTerms[j];
-                        academicData.AcademicTerms[j] = academicData.AcademicTerms[i];
-                        academicData.AcademicTerms[i] = temp;
-                    }
-                    else if (a == b && sA != sB)
-                    {
-                        Enum.TryParse(academicData.AcademicTerms[j].TermId.Substring(3, 2), out SeasonValues seasonJ);
-                        Enum.TryParse(academicData.AcademicTerms[i].TermId.Substring(3, 2), out SeasonValues seasonI);
-                        if (seasonJ < seasonI)
-                        {
-                            temp = academicData.AcademicTerms[j];
-                            academicData.AcademicTerms[j] = academicData.AcademicTerms[i];
-                            academicData.AcademicTerms[i] = temp;
-                        }
-                        else if (seasonJ == SeasonValues.SU && seasonI == SeasonValues.SU)
-                        {
-                            if (string.Compare(academicData.AcademicTerms[j].TermId.Substring(5), academicData.AcademicTerms[i].TermId.Substring(5)) < 0)
-                            {
-                                temp = academicData.AcademicTerms[j];
-                                academicData.AcademicTerms[j] = academicData.AcademicTerms[i];
-                                academicData.AcademicTerms[i] = temp;
-                            }
-                        }
-                    }
-                }
-            }
+            academicData.AcademicTerms.Sort((a, b) => a.TermComparer.CompareTo(b.TermComparer));
+
             return academicData;
         }
 

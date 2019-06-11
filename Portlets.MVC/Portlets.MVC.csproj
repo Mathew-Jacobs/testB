@@ -158,6 +158,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\CheckeredBg.png" />
     <Content Include="Assets\bg-60.png" />
     <Content Include="Assets\Icons\svg\account-login.svg" />
     <Content Include="Assets\Icons\svg\account-logout.svg" />
