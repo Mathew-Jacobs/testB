@@ -14,6 +14,7 @@ namespace Portlets.MVC.Models
         public string CourseName { get; set; }
         public string Title { get; set; }
         public string VerifiedGradeId { get; set; }
+        public Grade GradeInfo { get; set; }
         public DateTime? VerifiedGradeTimestamp { get; set; }
         public double Credit { get; set; }
         public double GpaCredit { get; set; }
@@ -133,52 +134,8 @@ namespace Portlets.MVC.Models
         public List<AcademicTerm> AcademicTerms { get; set; }
         public List<NonTermAcademicCredit> NonTermAcademicCredits { get; set; }
         public GradeRestriction GradeRestriction { get; set; }
-        public double TotalCreditsCompleted
-        {
-            get
-            {
-                var totalCredits = 0d;
-                string[] acceptedGrades = { "A", "B", "C", "D", "F", "Z" };
-                foreach (var term in AcademicTerms)
-                {
-                    foreach (var course in term.AcademicCredits)
-                    {
-                        if (acceptedGrades.Contains(course.VerifiedGradeId))
-                        {
-                            totalCredits += course.CompletedCredit;
-                        }
-                    }
-                }
-                return totalCredits;
-            }
-        }
-        public double OverallGradePointAverage
-        {
-            get
-            {
-                var totalCredits = TotalCreditsCompleted;
-                var totalGPoints = 0d;
-                string[] acceptedGrades = { "A", "B", "C", "D", "F", "Z" };
-                if (totalCredits > 0)
-                {
-                    foreach (var term in AcademicTerms)
-                    {
-                        foreach (var course in term.AcademicCredits)
-                        {
-                            if (acceptedGrades.Contains(course.VerifiedGradeId))
-                            {
-                                totalGPoints += course.GradePoints;
-                            }
-                        }
-                    }
-                    return totalGPoints / totalCredits;
-                }
-                else
-                {
-                    return 0d;
-                }
-            }
-        }
+        public double TotalCreditsCompleted { get; set; }
+        public double OverallGradePointAverage { get; set; }
         public object StudentId { get; set; }
     }
 

@@ -26,6 +26,10 @@
         { "Y", "Proficiency Credit" },
         { "-", "No grade was assigned" }
     };
+    var gradesForGPA = new List<string>()
+    {
+        "A", "B", "C", "D", "F", "Z"
+    };
 }
 
 <head>
@@ -152,23 +156,18 @@
                                 @Math.Round(course.CompletedCredit, 2).ToString("0.00")
                             </td>
                             <td align="right">
-                                @{ string x; }
-                                @if (string.IsNullOrEmpty(course.VerifiedGradeId))
-                                {
-                                    course.VerifiedGradeId = "-";
-                                }
-                                @if (tooltips.TryGetValue(course.VerifiedGradeId, out x))
+                                @if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
                                 {
                                     <div class="tooltip-wrapper">
-                                        @course.VerifiedGradeId
+                                        @course.GradeInfo.LetterGrade
                                         <span class="tooltip-text">
-                                            @tooltips[course.VerifiedGradeId]
+                                            @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
                                         </span>
                                     </div>
                                 }
                                 else
                                 {
-                                    @course.VerifiedGradeId
+                                    @course.GradeInfo.LetterGrade
                                 }
                             </td>
                         </tr>
@@ -188,24 +187,21 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="2">
-                            TERM TOTALS
-                        </td>
                         <td></td>
-                        <td colspan="3" align="right">
-                            CRED
+                        <td colspan="3" align="center">
+                            TERM CRED
                         </td>
-                        <td colspan="1">
-                            GPA
+                        <td colspan="2" align="center">
+                            TERM GPA
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="6"></td>
-                        <td align="right">
+                        <td colspan="4"></td>
+                        <td align="center">
                             @Math.Round(term.Credits, 2).ToString("0.00")
                         </td>
-                        <td align="right">
+                        <td align="center" colspan="2">
                             @Math.Round(term.GradePointAverage, 2).ToString("0.00")
                         </td>
                     </tr>

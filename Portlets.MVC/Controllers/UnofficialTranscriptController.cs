@@ -38,7 +38,6 @@ namespace Portlets.MVC.Controllers
             RequestHeader[] headers =
             {
                 new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
-                new RequestHeader() { Key = "Content-Type", Value = "application/json" },
                 new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
             };
 
@@ -47,6 +46,31 @@ namespace Portlets.MVC.Controllers
             dynamic jsonContent = JValue.Parse(response.Content);
             AcademicData obj = jsonContent.ToObject<AcademicData>();
             obj = OrderByTerm(obj);
+            var grades = GetGrades(bearerToken);
+            foreach (var term in obj.AcademicTerms.ToList())
+            {
+                foreach (var credit in term.AcademicCredits.ToList())
+                {
+                    var grade = new Grade();
+                    grade = grades.FirstOrDefault(x => x.Id == credit.VerifiedGradeId);
+                    if (grade == null)
+                    {
+                        grade = new Grade();
+                        grade.LetterGrade = " - ";
+                        grade.Description = "No grade was assigned";
+                    }
+                    if (grade.LetterGrade.Contains(":"))
+                    {
+                        grade.LetterGrade = grade.LetterGrade.Replace(":", "");
+                    }
+                    credit.GradeInfo = grade;
+                    if (credit.VerifiedGradeId == "CE" || credit.VerifiedGradeId == "L")
+                    {
+                        term.AcademicCredits.Remove(credit);
+                    }
+
+                }
+            }
             return View(obj);
         }
         private AcademicData OrderByTerm(AcademicData academicData)
@@ -91,6 +115,22 @@ namespace Portlets.MVC.Controllers
                 }
             }
             return academicData;
+        }
+
+        private List<Grade> GetGrades(string bearerToken)
+        {
+            RequestHeader[] headers =
+            {
+                new RequestHeader() { Key = "Accept", Value = "application/vnd.ellucian.v1+json" },
+                new RequestHeader() { Key = "X-CustomCredentials", Value = bearerToken }
+            };
+
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/colleagueapi", $"/grades", headers);
+
+            dynamic jsonContent = JValue.Parse(response.Content);
+            List<Grade> obj = jsonContent.ToObject<List<Grade>>();
+
+            return obj;
         }
         private enum SeasonValues
         {
