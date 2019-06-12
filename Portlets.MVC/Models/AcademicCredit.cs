@@ -60,13 +60,13 @@ namespace Portlets.MVC.Models
                     case "FA":
                         return "Fall";
                     case "SUA":
-                        return "Summer A";
+                        return "Summer";
                     case "SUB":
-                        return "Summer B";
+                        return "Summer";
                     case "SUC":
-                        return "Summer C";
+                        return "Summer";
                     case "SUD":
-                        return "Summer D";
+                        return "Summer";
                     default:
                         return null;
                 }
@@ -94,31 +94,19 @@ namespace Portlets.MVC.Models
             get
             {
                 string month;
-                switch (TermId.Substring(3))
+                switch (TermSeason)
                 {
-                    case "WI":
+                    case "Winter":
                         month = "1";
                         break;
-                    case "SP":
+                    case "Spring":
                         month = "2";
                         break;
-                    case "SU":
+                    case "Summer":
                         month = "3";
                         break;
-                    case "FA":
+                    case "Fall":
                         month = "7";
-                        break;
-                    case "SUA":
-                        month = "3";
-                        break;
-                    case "SUB":
-                        month = "4";
-                        break;
-                    case "SUC":
-                        month = "5";
-                        break;
-                    case "SUD":
-                        month = "6";
                         break;
                     default:
                         month = "10";

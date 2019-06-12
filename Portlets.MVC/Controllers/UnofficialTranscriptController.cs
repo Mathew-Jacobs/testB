@@ -45,6 +45,7 @@ namespace Portlets.MVC.Controllers
 
             dynamic jsonContent = JValue.Parse(response.Content);
             AcademicData obj = jsonContent.ToObject<AcademicData>();
+            obj = CombineSummers(obj);
             obj = OrderByTerm(obj);
             var grades = GetGrades(bearerToken);
             List<string> validGrades = new List<string>() { "A", "B", "C", "D", "F", "Z" };
@@ -64,7 +65,7 @@ namespace Portlets.MVC.Controllers
                 {
                     var grade = new Grade();
                     grade = grades.FirstOrDefault(x => x.Id == credit.VerifiedGradeId);
-                    
+
                     if (grade == null)
                     {
                         grade = new Grade
@@ -102,6 +103,57 @@ namespace Portlets.MVC.Controllers
         private AcademicData OrderByTerm(AcademicData academicData)
         {
             academicData.AcademicTerms.Sort((a, b) => a.TermComparer.CompareTo(b.TermComparer));
+
+            return academicData;
+        }
+
+        private AcademicData CombineSummers(AcademicData academicData)
+        {
+            List<string> validGrades = new List<string>() { "A", "B", "C", "D", "F", "Z" };
+            var dupes = academicData.AcademicTerms.GroupBy(x => x.TermComparer)
+                .SelectMany(group => group).ToList();
+            var summerTerms = academicData.AcademicTerms.Where(x => x.TermSeason == "Summer").ToList();
+            foreach (var term in summerTerms)
+            {
+                academicData.AcademicTerms.Remove(term);
+            }
+            var uniqueSummers = summerTerms.GroupBy(x => x.TermYear)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key).ToList();
+            List<AcademicTerm> tempTerms = new List<AcademicTerm>();
+            foreach (var year in uniqueSummers)
+            {
+                var terms = summerTerms.Where(x => x.TermYear == year).ToList();
+                var attemptedCredits = 0d;
+                var gradePoints = 0d;
+                var academicTerm = new AcademicTerm()
+                {
+                    TermId = terms[0].TermId,
+                    AcademicCredits = new List<AcademicCredit>()
+                };
+                foreach (var term in terms)
+                {
+                    foreach (var credit in term.AcademicCredits)
+                    {
+                        if (validGrades.Contains(credit.VerifiedGradeId))
+                        {
+                            attemptedCredits += credit.Credit;
+                            gradePoints += credit.GradePoints;
+                            academicTerm.Credits += credit.CompletedCredit;
+                        }
+                        academicTerm.AcademicCredits.Add(credit);
+                    }
+                }
+                if (attemptedCredits != 0)
+                {
+                    academicTerm.GradePointAverage = gradePoints / attemptedCredits;
+                }
+                tempTerms.Add(academicTerm);
+            }
+            foreach (var term in tempTerms)
+            {
+                academicData.AcademicTerms.Add(term);
+            }
 
             return academicData;
         }
