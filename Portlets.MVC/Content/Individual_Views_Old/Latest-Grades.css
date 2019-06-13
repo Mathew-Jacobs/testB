@@ -1,6 +1,29 @@
 ﻿body {
 }
 
+tr th {
+    background-color: #6f7276;
+    color: white;
+    border: 1px solid white;
+    border-top: none;
+    border-bottom: none;
+    font-size: x-small;
+    padding: 2px 4px;
+}
+
+tr td {
+    padding: 4px;
+    border: 1px solid white;
+}
+
+tr th:first-child {
+    border-left: 1px solid #6f7276;
+}
+
+tr th:last-child {
+    border-right: 1px solid #6f7276
+}
+
 .flex-table {
     width: 100%;
     height: 100%;
@@ -8,59 +31,59 @@
     flex-direction: column;
 }
 
-    .flex-table thead {
-        display: block;
-    }
-
-    .flex-table tbody {
-        display: block;
-        overflow-y: auto;
-        flex: 1;
-    }
-
-    .flex-table tr {
-        display: flex;
-    }
-
-    .flex-table tr {
-        
-    }
-
-    .flex-table thead > tr {
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-
-    .flex-table td,th {
-        display: block;
-        flex: 1;
-    }
-
-td {
-    padding: 0 7px;
-    font-weight: bold;
+.flex-table thead {
+    display: block;
+    margin-right: 0;
 }
 
-.space-around > td {
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+.flex-table tbody {
+    display: block;
+    overflow-y: scroll;
+    flex: 1;
+}
+
+.flex-table tr {
+    display: flex;
+    width: 100%;
+}
+
+.flex-table td, th {
+    display: block;
+}
+
+thead > tr {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+td {
+    font-weight: bold;
 }
 
 .flex-table tr td:first-child {
     flex: 0.75;
 }
+
 .flex-table tr th:first-child {
     flex: 0.75;
 }
+
 .flex-table tr td:nth-child(2) {
     flex: 2;
 }
+
 .flex-table tr td:nth-child(n+3) {
-    flex: 0.5;
+    flex: 0.4;
+    text-align: center;
 }
+
 .flex-table tr th:nth-child(n+3) {
-    flex: 0.5;
+    flex: 0.4;
+    text-align: center;
 }
+
 .flex-table tr th:nth-child(2) {
     flex: 2;
 }
+
+

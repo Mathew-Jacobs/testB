@@ -946,13 +946,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 14:03:55</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Latest-Grades.css">
-      <publishTime>06/13/2019 14:47:46</publishTime>
+      <publishTime>06/13/2019 16:52:59</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Unofficial-Transcript.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>06/05/2019 09:41:43</publishTime>
+      <publishTime>06/13/2019 16:31:52</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -1039,7 +1039,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 11:13:02</publishTime>
     </File>
     <File Include="Views/OldPortlet/LatestGrades.cshtml">
-      <publishTime>06/13/2019 15:40:01</publishTime>
+      <publishTime>06/13/2019 16:53:08</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
       <publishTime>06/05/2019 09:59:59</publishTime>

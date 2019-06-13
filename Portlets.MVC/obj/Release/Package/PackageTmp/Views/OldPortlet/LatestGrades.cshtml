@@ -18,16 +18,16 @@
     <table style="width: 100%;">
         <tbody>
             <tr style="background-color: #e1e3e6; height: 25px; font-weight: bold">
-                <td style="padding-left: 8px;">@latestTerm.TermSeason @latestTerm.TermYear</td>
-                <td style="text-align: right; padding-right: 8px; color: #6f7276">Term GPA: @Math.Round(latestTerm.GradePointAverage, 2).ToString("0.00")</td>
+                <td style="padding-left: 8px; border: none;">@latestTerm.TermSeason @latestTerm.TermYear</td>
+                <td style="text-align: right; padding-right: 8px; color: #6f7276; border: none;">Term GPA: @Math.Round(latestTerm.GradePointAverage, 2).ToString("0.00")</td>
             </tr>
         </tbody>
     </table>
 </div>
 <div style="width: 335px; height: 145px; overflow-y: auto;"> 
     <table class="flex-table">
-        <thead class="t-dark-header">
-            <tr id="scrollbarTest">
+        <thead>
+            <tr>
                 <th>Course</th>
                 <th>Title</th>
                 <th>Credit</th>
@@ -39,9 +39,9 @@
             {
                 <tr class="space-around">
                     <td>@course.CourseName</td>
-                    <td style="max-width: 145px">@course.Title</td>
-                    <td style="text-align: center">@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
-                    <td style="text-align: center">@course.VerifiedGradeId</td>
+                    <td>@course.Title</td>
+                    <td>@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
+                    <td>@course.VerifiedGradeId</td>
                 </tr>
             }
         </tbody>
