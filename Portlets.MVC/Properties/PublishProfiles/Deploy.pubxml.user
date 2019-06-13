@@ -715,10 +715,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>06/13/2019 15:08:39</publishTime>
+      <publishTime>06/13/2019 15:40:06</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>06/13/2019 15:08:39</publishTime>
+      <publishTime>06/13/2019 15:40:06</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>06/11/2019 16:34:08</publishTime>
@@ -1039,7 +1039,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 11:13:02</publishTime>
     </File>
     <File Include="Views/OldPortlet/LatestGrades.cshtml">
-      <publishTime>06/13/2019 15:06:08</publishTime>
+      <publishTime>06/13/2019 15:40:01</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
       <publishTime>06/05/2019 09:59:59</publishTime>
