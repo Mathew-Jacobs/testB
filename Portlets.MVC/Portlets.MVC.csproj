@@ -139,6 +139,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OldPortletController.cs" />
     <Compile Include="Controllers\PortletController.cs" />
     <Compile Include="Controllers\UnofficialTranscriptController.cs" />
     <Compile Include="Global.asax.cs">
@@ -439,6 +440,12 @@
     <Content Include="Views\Portlet\ClassSchedule.cshtml" />
     <Content Include="Views\Portlet\FinancialChecklist.cshtml" />
     <Content Include="Views\Portlet\ImportantDates.cshtml" />
+    <Content Include="Views\OldPortlet\AccountSummary.cshtml" />
+    <Content Include="Views\OldPortlet\BookList.cshtml" />
+    <Content Include="Views\OldPortlet\ClassSchedule.cshtml" />
+    <Content Include="Views\OldPortlet\FinancialChecklist.cshtml" />
+    <Content Include="Views\OldPortlet\ImportantDates.cshtml" />
+    <Content Include="Views\OldPortlet\LatestGrades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

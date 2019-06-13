@@ -1,0 +1,48 @@
+﻿@model Portlets.MVC.Models.StudentFinance
+
+@{
+    ViewBag.Title = "AccountSummary";
+}
+
+@{ double overdue = 0; Portlets.MVC.Models.GeneralItem temp = new Portlets.MVC.Models.GeneralItem();}
+
+<div style="width: 335px">
+    @if (Model.Balance != 0)
+    {
+        foreach (var term in Model.AccountTerms)
+        {
+            foreach (var item in term.GeneralItems)
+            {
+                if (item.Overdue)
+                {
+                    overdue += item.AmountDue;
+                }
+                if (item.DueDate > temp.DueDate)
+                {
+                    temp = item;
+                }
+            }
+        }
+        <div class="test">
+            <div>Next payment Due (@temp.DueDate.ToShortDateString())</div>
+            <div class="text-right">@temp.AmountDue</div>
+        </div>
+        if (overdue != 0)
+        {
+            <div class="test">
+                <div>Overdue</div>
+                <div class="text-right" style="color: #AC1A2F">@overdue</div>
+            </div>
+        }
+        <div class="test">
+            <div>Total Due</div>
+            <div class="text-right" style="@(overdue != 0 ? "color: #AC1A2F" : "")">@Model.Balance</div>
+        </div>
+    }
+    else
+    {
+        <div class="main-text">
+            You have no outstanding balance
+        </div>
+    }
+</div>
