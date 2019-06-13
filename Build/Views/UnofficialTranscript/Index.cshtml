@@ -1,0 +1,205 @@
+﻿@model Portlets.MVC.Models.AcademicData
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    var gradesForGPA = new List<string>() {
+        "A", "B", "C", "D", "F", "Z"
+    };
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Unofficial-Transcript.css" />
+</head>
+
+<div class="header-information sinclair-red">
+    <div class="logo-wrapper">
+        <img src="~/Assets/Sinclair-Logo-White.svg" height="40" />
+        <h2 style="margin: 0 0 0 10px;">
+            Unofficial Transcript
+        </h2>
+    </div>
+</div>
+@if (Model.HasQuarters)
+{
+    <div class="disclaimer">
+        Sinclair Community College has operated on the semester system since August 2012. All credit hours earned prior to August 2012 have been converted to semester hours.
+    </div>
+}
+<div class="flex-wrapper">
+    <div class="sticky-sidebar">
+        <div>
+            <h4 style="font-weight: bold">Grades</h4>
+            <small>
+                Grades used in the calculation of GPA
+            </small>
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <th>
+                            Grade
+                        </th>
+                        <th>
+                            Points
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            A
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            B
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            C
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            D
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            F
+                        </td>
+                        <td>
+                            0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Z
+                        </td>
+                        <td>
+                            0 <small>(Did not attend class)</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                To see the meaning of other grades, simply hover over them and the definition will pop up.
+            </p>
+            <hr />
+            <table style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">Total Credits Earned</td>
+                        <td style="text-align:right;">@Math.Round(Model.TotalCreditsCompleted, 2).ToString("0.00")</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Cumulative GPA</td>
+                        <td style="text-align:right;">@Math.Round(Model.CalculatedGPA, 2).ToString("0.00")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="transcript-column">
+        <table>
+            <tbody>
+                @foreach (var term in Model.AcademicTerms)
+                {
+
+                    <tr>
+                        <td colspan="9">
+                            <h3>
+                                @term.TermSeason, @term.TermYear
+                            </h3>
+                        </td>
+                    </tr>
+
+                    foreach (var course in term.AcademicCredits)
+                    {
+                        <tr>
+                            <td colspan="2">
+                                @course.CourseName
+                            </td>
+                            <td colspan="5">
+                                @course.Title
+                            </td>
+                            <td align="right">
+                                @Math.Round(course.CompletedCredit, 2).ToString("0.00")
+                            </td>
+                            <td align="center">
+                                @if (course.GradeInfo != null)
+                                {
+                                    if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
+                                    {
+                                        <div class="tooltip-wrapper">
+                                            @course.GradeInfo.DisplayGrade
+                                            @if (!string.IsNullOrEmpty(course.GradeInfo.Symbol))
+                                            {
+                                                <span>
+                                                    @course.GradeInfo.Symbol
+                                                </span>
+                                            }
+                                            <span class="tooltip-text">
+                                                @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
+                                            </span>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        @course.GradeInfo.DisplayGrade
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                    <tr>
+                        <td></td>
+                        <td colspan="7">
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="7">
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td colspan="3" align="center">
+                            TERM CRED
+                        </td>
+                        <td colspan="2" align="center">
+                            TERM GPA
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td align="center">
+                            @Math.Round(term.Credits, 2).ToString("0.00")
+                        </td>
+                        <td align="center" colspan="2">
+                            @Math.Round(term.GradePointAverage, 2).ToString("0.00")
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@model List<Portlets.MVC.Models.FinancialAidChecklist>
+
+@{
+    ViewBag.Title = "FinancialChecklist";
+}
+
+<h2>FinancialChecklist</h2>
+<div style="width: 335px;">
+    @foreach (var checklist in Model)
+    {
+        <div>
+            @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(checklist.Description)
+        </div>
+    }
+</div>

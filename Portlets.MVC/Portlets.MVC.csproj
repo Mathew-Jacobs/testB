@@ -45,13 +45,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FlexibleConfiguration, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FlexibleConfiguration.1.2.0\lib\net45\FlexibleConfiguration.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Polyglot, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polyglot.1.2.0\lib\net45\Polyglot.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,6 +125,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="YamlDotNet, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.3.9.0\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -124,19 +139,263 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OldPortletController.cs" />
     <Compile Include="Controllers\PortletController.cs" />
+    <Compile Include="Controllers\UnofficialTranscriptController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AcademicCredit.cs" />
+    <Compile Include="Models\Events.cs" />
+    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\FinancialAidChecklist.cs" />
+    <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\ImportantDate.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Router.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\StudentFinance.cs" />
+    <Compile Include="Models\Term.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\CheckeredBg.png" />
+    <Content Include="Assets\bg-60.png" />
+    <Content Include="Assets\Icons\svg\account-login.svg" />
+    <Content Include="Assets\Icons\svg\account-logout.svg" />
+    <Content Include="Assets\Icons\svg\action-redo.svg" />
+    <Content Include="Assets\Icons\svg\action-undo.svg" />
+    <Content Include="Assets\Icons\svg\align-center.svg" />
+    <Content Include="Assets\Icons\svg\align-left.svg" />
+    <Content Include="Assets\Icons\svg\align-right.svg" />
+    <Content Include="Assets\Icons\svg\aperture.svg" />
+    <Content Include="Assets\Icons\svg\arrow-bottom.svg" />
+    <Content Include="Assets\Icons\svg\arrow-circle-bottom.svg" />
+    <Content Include="Assets\Icons\svg\arrow-circle-left.svg" />
+    <Content Include="Assets\Icons\svg\arrow-circle-right.svg" />
+    <Content Include="Assets\Icons\svg\arrow-circle-top.svg" />
+    <Content Include="Assets\Icons\svg\arrow-left.svg" />
+    <Content Include="Assets\Icons\svg\arrow-right.svg" />
+    <Content Include="Assets\Icons\svg\arrow-thick-bottom.svg" />
+    <Content Include="Assets\Icons\svg\arrow-thick-left.svg" />
+    <Content Include="Assets\Icons\svg\arrow-thick-right.svg" />
+    <Content Include="Assets\Icons\svg\arrow-thick-top.svg" />
+    <Content Include="Assets\Icons\svg\arrow-top.svg" />
+    <Content Include="Assets\Icons\svg\audio-spectrum.svg" />
+    <Content Include="Assets\Icons\svg\audio.svg" />
+    <Content Include="Assets\Icons\svg\badge.svg" />
+    <Content Include="Assets\Icons\svg\ban.svg" />
+    <Content Include="Assets\Icons\svg\bar-chart.svg" />
+    <Content Include="Assets\Icons\svg\basket.svg" />
+    <Content Include="Assets\Icons\svg\battery-empty.svg" />
+    <Content Include="Assets\Icons\svg\battery-full.svg" />
+    <Content Include="Assets\Icons\svg\beaker.svg" />
+    <Content Include="Assets\Icons\svg\bell.svg" />
+    <Content Include="Assets\Icons\svg\bluetooth.svg" />
+    <Content Include="Assets\Icons\svg\bold.svg" />
+    <Content Include="Assets\Icons\svg\bolt.svg" />
+    <Content Include="Assets\Icons\svg\book.svg" />
+    <Content Include="Assets\Icons\svg\bookmark.svg" />
+    <Content Include="Assets\Icons\svg\box.svg" />
+    <Content Include="Assets\Icons\svg\briefcase.svg" />
+    <Content Include="Assets\Icons\svg\british-pound.svg" />
+    <Content Include="Assets\Icons\svg\browser.svg" />
+    <Content Include="Assets\Icons\svg\brush.svg" />
+    <Content Include="Assets\Icons\svg\bug.svg" />
+    <Content Include="Assets\Icons\svg\bullhorn.svg" />
+    <Content Include="Assets\Icons\svg\calculator.svg" />
+    <Content Include="Assets\Icons\svg\calendar.svg" />
+    <Content Include="Assets\Icons\svg\camera-slr.svg" />
+    <Content Include="Assets\Icons\svg\caret-bottom.svg" />
+    <Content Include="Assets\Icons\svg\caret-left.svg" />
+    <Content Include="Assets\Icons\svg\caret-right.svg" />
+    <Content Include="Assets\Icons\svg\caret-top.svg" />
+    <Content Include="Assets\Icons\svg\cart.svg" />
+    <Content Include="Assets\Icons\svg\chat.svg" />
+    <Content Include="Assets\Icons\svg\check.svg" />
+    <Content Include="Assets\Icons\svg\chevron-bottom.svg" />
+    <Content Include="Assets\Icons\svg\chevron-left.svg" />
+    <Content Include="Assets\Icons\svg\chevron-right.svg" />
+    <Content Include="Assets\Icons\svg\chevron-top.svg" />
+    <Content Include="Assets\Icons\svg\circle-check.svg" />
+    <Content Include="Assets\Icons\svg\circle-x.svg" />
+    <Content Include="Assets\Icons\svg\clipboard.svg" />
+    <Content Include="Assets\Icons\svg\clock.svg" />
+    <Content Include="Assets\Icons\svg\cloud-download.svg" />
+    <Content Include="Assets\Icons\svg\cloud-upload.svg" />
+    <Content Include="Assets\Icons\svg\cloud.svg" />
+    <Content Include="Assets\Icons\svg\cloudy.svg" />
+    <Content Include="Assets\Icons\svg\code.svg" />
+    <Content Include="Assets\Icons\svg\cog.svg" />
+    <Content Include="Assets\Icons\svg\collapse-down.svg" />
+    <Content Include="Assets\Icons\svg\collapse-left.svg" />
+    <Content Include="Assets\Icons\svg\collapse-right.svg" />
+    <Content Include="Assets\Icons\svg\collapse-up.svg" />
+    <Content Include="Assets\Icons\svg\command.svg" />
+    <Content Include="Assets\Icons\svg\comment-square.svg" />
+    <Content Include="Assets\Icons\svg\compass.svg" />
+    <Content Include="Assets\Icons\svg\contrast.svg" />
+    <Content Include="Assets\Icons\svg\copywriting.svg" />
+    <Content Include="Assets\Icons\svg\credit-card.svg" />
+    <Content Include="Assets\Icons\svg\crop.svg" />
+    <Content Include="Assets\Icons\svg\dashboard.svg" />
+    <Content Include="Assets\Icons\svg\data-transfer-download.svg" />
+    <Content Include="Assets\Icons\svg\data-transfer-upload.svg" />
+    <Content Include="Assets\Icons\svg\delete.svg" />
+    <Content Include="Assets\Icons\svg\dial.svg" />
+    <Content Include="Assets\Icons\svg\document.svg" />
+    <Content Include="Assets\Icons\svg\dollar.svg" />
+    <Content Include="Assets\Icons\svg\double-quote-sans-left.svg" />
+    <Content Include="Assets\Icons\svg\double-quote-sans-right.svg" />
+    <Content Include="Assets\Icons\svg\double-quote-serif-left.svg" />
+    <Content Include="Assets\Icons\svg\double-quote-serif-right.svg" />
+    <Content Include="Assets\Icons\svg\droplet.svg" />
+    <Content Include="Assets\Icons\svg\eject.svg" />
+    <Content Include="Assets\Icons\svg\elevator.svg" />
+    <Content Include="Assets\Icons\svg\ellipses.svg" />
+    <Content Include="Assets\Icons\svg\envelope-closed.svg" />
+    <Content Include="Assets\Icons\svg\envelope-open.svg" />
+    <Content Include="Assets\Icons\svg\euro.svg" />
+    <Content Include="Assets\Icons\svg\excerpt.svg" />
+    <Content Include="Assets\Icons\svg\expand-down.svg" />
+    <Content Include="Assets\Icons\svg\expand-left.svg" />
+    <Content Include="Assets\Icons\svg\expand-right.svg" />
+    <Content Include="Assets\Icons\svg\expand-up.svg" />
+    <Content Include="Assets\Icons\svg\external-link.svg" />
+    <Content Include="Assets\Icons\svg\eye.svg" />
+    <Content Include="Assets\Icons\svg\eyedropper.svg" />
+    <Content Include="Assets\Icons\svg\file.svg" />
+    <Content Include="Assets\Icons\svg\fire.svg" />
+    <Content Include="Assets\Icons\svg\flag.svg" />
+    <Content Include="Assets\Icons\svg\flash.svg" />
+    <Content Include="Assets\Icons\svg\folder.svg" />
+    <Content Include="Assets\Icons\svg\fork.svg" />
+    <Content Include="Assets\Icons\svg\fullscreen-enter.svg" />
+    <Content Include="Assets\Icons\svg\fullscreen-exit.svg" />
+    <Content Include="Assets\Icons\svg\globe.svg" />
+    <Content Include="Assets\Icons\svg\graph.svg" />
+    <Content Include="Assets\Icons\svg\grid-four-up.svg" />
+    <Content Include="Assets\Icons\svg\grid-three-up.svg" />
+    <Content Include="Assets\Icons\svg\grid-two-up.svg" />
+    <Content Include="Assets\Icons\svg\hard-drive.svg" />
+    <Content Include="Assets\Icons\svg\header.svg" />
+    <Content Include="Assets\Icons\svg\headphones.svg" />
+    <Content Include="Assets\Icons\svg\heart.svg" />
+    <Content Include="Assets\Icons\svg\home.svg" />
+    <Content Include="Assets\Icons\svg\image.svg" />
+    <Content Include="Assets\Icons\svg\inbox.svg" />
+    <Content Include="Assets\Icons\svg\infinity.svg" />
+    <Content Include="Assets\Icons\svg\info.svg" />
+    <Content Include="Assets\Icons\svg\italic.svg" />
+    <Content Include="Assets\Icons\svg\justify-center.svg" />
+    <Content Include="Assets\Icons\svg\justify-left.svg" />
+    <Content Include="Assets\Icons\svg\justify-right.svg" />
+    <Content Include="Assets\Icons\svg\key.svg" />
+    <Content Include="Assets\Icons\svg\laptop.svg" />
+    <Content Include="Assets\Icons\svg\layers.svg" />
+    <Content Include="Assets\Icons\svg\lightbulb.svg" />
+    <Content Include="Assets\Icons\svg\link-broken.svg" />
+    <Content Include="Assets\Icons\svg\link-intact.svg" />
+    <Content Include="Assets\Icons\svg\list-rich.svg" />
+    <Content Include="Assets\Icons\svg\list.svg" />
+    <Content Include="Assets\Icons\svg\location.svg" />
+    <Content Include="Assets\Icons\svg\lock-locked.svg" />
+    <Content Include="Assets\Icons\svg\lock-unlocked.svg" />
+    <Content Include="Assets\Icons\svg\loop-circular.svg" />
+    <Content Include="Assets\Icons\svg\loop-square.svg" />
+    <Content Include="Assets\Icons\svg\loop.svg" />
+    <Content Include="Assets\Icons\svg\magnifying-glass.svg" />
+    <Content Include="Assets\Icons\svg\map-marker.svg" />
+    <Content Include="Assets\Icons\svg\map.svg" />
+    <Content Include="Assets\Icons\svg\media-pause.svg" />
+    <Content Include="Assets\Icons\svg\media-play.svg" />
+    <Content Include="Assets\Icons\svg\media-record.svg" />
+    <Content Include="Assets\Icons\svg\media-skip-backward.svg" />
+    <Content Include="Assets\Icons\svg\media-skip-forward.svg" />
+    <Content Include="Assets\Icons\svg\media-step-backward.svg" />
+    <Content Include="Assets\Icons\svg\media-step-forward.svg" />
+    <Content Include="Assets\Icons\svg\media-stop.svg" />
+    <Content Include="Assets\Icons\svg\medical-cross.svg" />
+    <Content Include="Assets\Icons\svg\menu.svg" />
+    <Content Include="Assets\Icons\svg\microphone.svg" />
+    <Content Include="Assets\Icons\svg\minus.svg" />
+    <Content Include="Assets\Icons\svg\monitor.svg" />
+    <Content Include="Assets\Icons\svg\moon.svg" />
+    <Content Include="Assets\Icons\svg\move.svg" />
+    <Content Include="Assets\Icons\svg\musical-note.svg" />
+    <Content Include="Assets\Icons\svg\paperclip.svg" />
+    <Content Include="Assets\Icons\svg\pencil.svg" />
+    <Content Include="Assets\Icons\svg\people.svg" />
+    <Content Include="Assets\Icons\svg\person.svg" />
+    <Content Include="Assets\Icons\svg\phone.svg" />
+    <Content Include="Assets\Icons\svg\pie-chart.svg" />
+    <Content Include="Assets\Icons\svg\pin.svg" />
+    <Content Include="Assets\Icons\svg\play-circle.svg" />
+    <Content Include="Assets\Icons\svg\plus.svg" />
+    <Content Include="Assets\Icons\svg\power-standby.svg" />
+    <Content Include="Assets\Icons\svg\print.svg" />
+    <Content Include="Assets\Icons\svg\project.svg" />
+    <Content Include="Assets\Icons\svg\pulse.svg" />
+    <Content Include="Assets\Icons\svg\puzzle-piece.svg" />
+    <Content Include="Assets\Icons\svg\question-mark.svg" />
+    <Content Include="Assets\Icons\svg\rain.svg" />
+    <Content Include="Assets\Icons\svg\random.svg" />
+    <Content Include="Assets\Icons\svg\reload.svg" />
+    <Content Include="Assets\Icons\svg\resize-both.svg" />
+    <Content Include="Assets\Icons\svg\resize-height.svg" />
+    <Content Include="Assets\Icons\svg\resize-width.svg" />
+    <Content Include="Assets\Icons\svg\rss-alt.svg" />
+    <Content Include="Assets\Icons\svg\rss.svg" />
+    <Content Include="Assets\Icons\svg\script.svg" />
+    <Content Include="Assets\Icons\svg\share-boxed.svg" />
+    <Content Include="Assets\Icons\svg\share.svg" />
+    <Content Include="Assets\Icons\svg\shield.svg" />
+    <Content Include="Assets\Icons\svg\signal.svg" />
+    <Content Include="Assets\Icons\svg\signpost.svg" />
+    <Content Include="Assets\Icons\svg\sort-ascending.svg" />
+    <Content Include="Assets\Icons\svg\sort-descending.svg" />
+    <Content Include="Assets\Icons\svg\spreadsheet.svg" />
+    <Content Include="Assets\Icons\svg\star.svg" />
+    <Content Include="Assets\Icons\svg\sun.svg" />
+    <Content Include="Assets\Icons\svg\tablet.svg" />
+    <Content Include="Assets\Icons\svg\tag.svg" />
+    <Content Include="Assets\Icons\svg\tags.svg" />
+    <Content Include="Assets\Icons\svg\target.svg" />
+    <Content Include="Assets\Icons\svg\task.svg" />
+    <Content Include="Assets\Icons\svg\terminal.svg" />
+    <Content Include="Assets\Icons\svg\text.svg" />
+    <Content Include="Assets\Icons\svg\thumb-down.svg" />
+    <Content Include="Assets\Icons\svg\thumb-up.svg" />
+    <Content Include="Assets\Icons\svg\timer.svg" />
+    <Content Include="Assets\Icons\svg\transfer.svg" />
+    <Content Include="Assets\Icons\svg\trash.svg" />
+    <Content Include="Assets\Icons\svg\underline.svg" />
+    <Content Include="Assets\Icons\svg\vertical-align-bottom.svg" />
+    <Content Include="Assets\Icons\svg\vertical-align-center.svg" />
+    <Content Include="Assets\Icons\svg\vertical-align-top.svg" />
+    <Content Include="Assets\Icons\svg\video.svg" />
+    <Content Include="Assets\Icons\svg\volume-high.svg" />
+    <Content Include="Assets\Icons\svg\volume-low.svg" />
+    <Content Include="Assets\Icons\svg\volume-off.svg" />
+    <Content Include="Assets\Icons\svg\warning.svg" />
+    <Content Include="Assets\Icons\svg\wifi.svg" />
+    <Content Include="Assets\Icons\svg\wrench.svg" />
+    <Content Include="Assets\Icons\svg\x.svg" />
+    <Content Include="Assets\Icons\svg\yen.svg" />
+    <Content Include="Assets\Icons\svg\zoom-in.svg" />
+    <Content Include="Assets\Icons\svg\zoom-out.svg" />
+    <Content Include="Assets\README\VSCommunity.png" />
+    <Content Include="Assets\Sinclair-Logo-White.svg" />
+    <Content Include="Assets\unofficial.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Individual_Views\Booklist.css" />
+    <Content Include="Content\Individual_Views\ClassSchedule.css" />
+    <Content Include="Content\Individual_Views\ImportantDates.css" />
+    <Content Include="Content\Individual_Views\Latest-Grades.css" />
+    <Content Include="Content\Individual_Views\Unofficial-Transcript.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -146,7 +405,7 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
-    <None Include="Properties\PublishProfiles\CustomProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -175,9 +434,22 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Portlet\AccountSummary.cshtml" />
+    <Content Include="Views\UnofficialTranscript\Index.cshtml" />
+    <Content Include="Views\Portlet\LatestGrades.cshtml" />
+    <Content Include="Views\Portlet\BookList.cshtml" />
+    <Content Include="Views\Portlet\ClassSchedule.cshtml" />
+    <Content Include="Views\Portlet\FinancialChecklist.cshtml" />
+    <Content Include="Views\Portlet\ImportantDates.cshtml" />
+    <Content Include="Views\OldPortlet\AccountSummary.cshtml" />
+    <Content Include="Views\OldPortlet\BookList.cshtml" />
+    <Content Include="Views\OldPortlet\ClassSchedule.cshtml" />
+    <Content Include="Views\OldPortlet\FinancialChecklist.cshtml" />
+    <Content Include="Views\OldPortlet\ImportantDates.cshtml" />
+    <Content Include="Views\OldPortlet\LatestGrades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

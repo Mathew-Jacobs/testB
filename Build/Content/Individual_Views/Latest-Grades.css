@@ -1,0 +1,12 @@
+﻿body {
+}
+
+td {
+    padding: 0 7px;
+    font-weight: bold;
+}
+
+.space-around>td {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
