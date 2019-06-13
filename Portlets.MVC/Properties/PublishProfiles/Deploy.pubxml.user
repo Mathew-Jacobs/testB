@@ -715,10 +715,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>06/12/2019 14:57:42</publishTime>
+      <publishTime>06/13/2019 09:47:08</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>06/12/2019 14:57:42</publishTime>
+      <publishTime>06/13/2019 09:47:08</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>06/11/2019 16:34:08</publishTime>

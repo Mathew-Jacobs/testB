@@ -85,10 +85,12 @@ namespace Portlets.MVC.Controllers
                     }
                     if (validGrades.Contains(grade.LetterGrade) && credit.ReplacedStatus != "Replaced")
                     {
+                        
                         totalPossCredits += credit.Credit;
                         totalGradePoints += credit.GradePoints;
                     }
                 }
+                obj.TotalCreditsCompleted += term.Credits;
                 if (term.AcademicCredits.Count == 0)
                 {
                     obj.AcademicTerms.Remove(term);
