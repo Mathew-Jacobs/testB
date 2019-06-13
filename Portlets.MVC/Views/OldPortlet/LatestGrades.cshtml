@@ -13,20 +13,21 @@
     }
 }
 
-<link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Latest-Grades.css" />
-
+<link rel="stylesheet" type="text/css" href="~/Content/Individual_Views_Old/Latest-Grades.css" />
 <div style="width: 335px;">
     <table style="width: 100%;">
         <tbody>
-            <tr style="background-color: #e1e3e6; height: 40px; font-weight: bold">
+            <tr style="background-color: #e1e3e6; height: 25px; font-weight: bold">
                 <td style="padding-left: 8px;">@latestTerm.TermSeason @latestTerm.TermYear</td>
                 <td style="text-align: right; padding-right: 8px; color: #6f7276">Term GPA: @Math.Round(latestTerm.GradePointAverage, 2).ToString("0.00")</td>
             </tr>
         </tbody>
     </table>
-    <table style="width: 100%">
+</div>
+<div style="width: 335px; height: 105px; overflow-y: auto;"> 
+    <table class="flex-table">
         <thead class="t-dark-header">
-            <tr>
+            <tr id="scrollbarTest">
                 <th>Course</th>
                 <th>Title</th>
                 <th>Credit</th>

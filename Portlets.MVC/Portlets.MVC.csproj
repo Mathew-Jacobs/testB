@@ -391,6 +391,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Individual_Views_Old\Booklist.css" />
+    <Content Include="Content\Individual_Views_Old\ClassSchedule.css" />
+    <Content Include="Content\Individual_Views_Old\ImportantDates.css" />
+    <Content Include="Content\Individual_Views_Old\Latest-Grades.css" />
+    <Content Include="Content\Individual_Views_Old\Unofficial-Transcript.css" />
     <Content Include="Content\Individual_Views\Booklist.css" />
     <Content Include="Content\Individual_Views\ClassSchedule.css" />
     <Content Include="Content\Individual_Views\ImportantDates.css" />

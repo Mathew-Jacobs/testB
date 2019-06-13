@@ -1,0 +1,66 @@
+﻿body {
+}
+
+.flex-table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .flex-table thead {
+        display: block;
+    }
+
+    .flex-table tbody {
+        display: block;
+        overflow-y: auto;
+        flex: 1;
+    }
+
+    .flex-table tr {
+        display: flex;
+    }
+
+    .flex-table tr {
+        
+    }
+
+    .flex-table thead > tr {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .flex-table td,th {
+        display: block;
+        flex: 1;
+    }
+
+td {
+    padding: 0 7px;
+    font-weight: bold;
+}
+
+.space-around > td {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+.flex-table tr td:first-child {
+    flex: 0.75;
+}
+.flex-table tr th:first-child {
+    flex: 0.75;
+}
+.flex-table tr td:nth-child(2) {
+    flex: 2;
+}
+.flex-table tr td:nth-child(n+3) {
+    flex: 0.5;
+}
+.flex-table tr th:nth-child(n+3) {
+    flex: 0.5;
+}
+.flex-table tr th:nth-child(2) {
+    flex: 2;
+}
