@@ -715,10 +715,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>06/13/2019 15:40:06</publishTime>
+      <publishTime>06/17/2019 14:34:05</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>06/13/2019 15:40:06</publishTime>
+      <publishTime>06/17/2019 14:34:05</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>06/11/2019 16:34:08</publishTime>
@@ -934,7 +934,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/30/2019 15:41:39</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>06/11/2019 14:20:03</publishTime>
+      <publishTime>06/17/2019 14:30:34</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Booklist.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
@@ -1069,7 +1069,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>06/11/2019 15:57:37</publishTime>
+      <publishTime>06/17/2019 14:28:23</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>

@@ -7,21 +7,33 @@ namespace Portlets.MVC.Models
 {
     public class Grade
     {
+        private string symbol = "";
         public string Id { get; set; }
         public string LetterGrade { get; set; }
         public string Symbol
         {
             get
             {
-                if (!string.IsNullOrEmpty(LetterGrade))
+                if (symbol != "")
                 {
-                    char[] array = LetterGrade.ToCharArray();
-                    return new string(Array.FindAll(array, x => !char.IsLetterOrDigit(x)));
+                    return symbol;
                 }
                 else
                 {
-                    return "";
+                    if (!string.IsNullOrEmpty(LetterGrade))
+                    {
+                        char[] array = LetterGrade.ToCharArray();
+                        return new string(Array.FindAll(array, x => !char.IsLetterOrDigit(x)));
+                    }
+                    else
+                    {
+                        return "";
+                    }
                 }
+            }
+            set
+            {
+                symbol = value;
             }
         }
         public string DisplayGrade
