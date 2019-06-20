@@ -21,6 +21,9 @@
             Unofficial Transcript
         </h2>
     </div>
+    <div class="buttons">
+        <input type="button" value="Generate PDF" class="button" id="pdf-btn" />
+    </div>
 </div>
 @if (Model.HasQuarters)
 {
@@ -216,3 +219,23 @@
 <div class="footer-information sinclair-red">
 
 </div>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $('#pdf-btn').click(function () {
+        console.log("hello")
+        $.ajax({
+            url: '/UnofficialTranscript/GeneratePDF',
+            type: "POST",
+            data: {
+                academicData: @Html.Raw(Json.Encode(Model))
+            },
+            datatype: "json",
+            success: function (data) {
+                var fileName = JSON.parse(data);
+                var fileURL = "/Output/" + fileName['file'];
+                window.open(fileURL);
+            }
+        });
+    });
+</script>

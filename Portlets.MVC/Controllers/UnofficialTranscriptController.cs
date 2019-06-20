@@ -1,12 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using Portlets.MVC.Models;
 using Portlets.Service.Admin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PdfSharp.Drawing.Layout;
 
 namespace Portlets.MVC.Controllers
 {
@@ -50,6 +55,31 @@ namespace Portlets.MVC.Controllers
             var grades = GetGrades(bearerToken);
             obj = CalculateGPA(obj, grades);
             return View(obj);
+        }
+
+        public string GeneratePDF(AcademicData academicData)
+        {
+            PdfDocument pdf = new PdfDocument();
+            pdf.Info.Title = $"Unofficial Transcript";
+            PdfPage pdfPage = pdf.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+            XTextFormatter textFormatter = new XTextFormatter(graph);
+            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+            textFormatter.DrawString("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", font, XBrushes.Black, new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point));
+            MemoryStream ms = new MemoryStream();
+            string path = Server.MapPath("/Output/");
+            string fileName = "Sample.pdf";
+            pdf.Save(path + fileName);
+            pdf.Close();
+
+            var result = new { file = fileName };
+
+            return JsonConvert.SerializeObject(result);
         }
         private AcademicData OrderByTerm(AcademicData academicData)
         {
@@ -199,17 +229,14 @@ namespace Portlets.MVC.Controllers
                         return academicData;
                     }
 
-                    
-                    if (credit.GradeInfo.LetterGrade == "CE" || credit.GradeInfo.LetterGrade == "L")
-                    {
-                        term.AcademicCredits.Remove(credit);
-                    }
+                   
                     if ((validGrades.Contains(credit.GradeInfo.LetterGrade) && credit.ReplacedStatus != "Replaced") || (credit.GradeInfo.Symbol == "#" && credit.ReplacedStatus != "Replaced"))
                     {
                         termCredit += credit.Credit;
                         termGradePoints += credit.GradePoints;
                     }
                 }
+                term.AcademicCredits.RemoveAll(x => (x.GradeInfo.LetterGrade == "CE" || x.GradeInfo.LetterGrade == "L"));
                 term.Credits = termCredit;
                 if (termCredit > 0)
                 {

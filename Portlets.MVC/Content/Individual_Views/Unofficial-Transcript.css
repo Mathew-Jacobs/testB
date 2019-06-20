@@ -34,6 +34,7 @@ body::after {
 
 .transcript-column {
     width: 450px;
+    margin-top: 20px;
     max-width: 100vw;
     background: url(../../Assets/bg-60.png);
 }
@@ -58,7 +59,7 @@ td {
     justify-content: center;
     align-items: center;
     background: url(../../Assets/bg-60.png);
-    height: 420px;
+    height: 480px;
     max-height: calc(100vh - 100px);
     width: 350px;
     max-width: calc(100vw - 30px);
