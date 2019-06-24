@@ -205,7 +205,7 @@ namespace Portlets.MVC.Models
             }
         }
         public double CalculatedGPA { get; set; }
-        public object StudentId { get; set; }
+        public string StudentId { get; set; }
 
 
     }
