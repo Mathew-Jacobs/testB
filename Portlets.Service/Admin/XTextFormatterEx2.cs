@@ -144,7 +144,7 @@ namespace PdfSharp.Drawing.Layout
         double _cyDescent;
         double _spaceWidth;
 
-        private bool _preparedText;
+        public bool _preparedText;
 
         double GetLineSpace()
         {

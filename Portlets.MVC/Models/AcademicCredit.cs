@@ -121,6 +121,8 @@ namespace Portlets.MVC.Models
         public int ContinuingEducationUnits { get; set; }
         public bool FreshStart { get; set; }
         public bool Included { get { return incl; } set { incl = value; } }
+        public double GPACredits { get; set; }
+        public double GradePoints { get; set; }
         public List<AcademicCredit> AcademicCredits { get; set; }
     }
 
