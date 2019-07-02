@@ -110,6 +110,9 @@ td {
 
 .header-information {
     padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .footer-information {
@@ -125,6 +128,12 @@ td {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
 }
 
 .disclaimer {

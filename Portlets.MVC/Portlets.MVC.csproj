@@ -378,6 +378,7 @@
     <Content Include="Assets\Icons\svg\play-circle.svg" />
     <Content Include="Assets\Icons\svg\plus.svg" />
     <Content Include="Assets\Icons\svg\power-standby.svg" />
+    <Content Include="Assets\Icons\svg\print-white.svg" />
     <Content Include="Assets\Icons\svg\print.svg" />
     <Content Include="Assets\Icons\svg\project.svg" />
     <Content Include="Assets\Icons\svg\pulse.svg" />
