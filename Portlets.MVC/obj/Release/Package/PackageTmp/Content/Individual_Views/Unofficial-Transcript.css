@@ -1,7 +1,15 @@
 ﻿body {
+    position: relative;
     background-image: url(../../Assets/CheckeredBg.png);
     background-attachment: fixed;
     background-size: 2900px;
+    min-height: 100vh;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 50px;
 }
 
 .flex-wrapper {
@@ -16,16 +24,17 @@
     background-size: 200px;
     background-attachment: fixed;
     background-color: white;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     border-radius: 5px;
 }
 
-.included-False {
-    background-color: aqua;
+.disclaimer-False {
+    margin-top: 20px;
 }
 
 .transcript-column {
     width: 450px;
+    margin-top: 20px;
     max-width: 100vw;
     background: url(../../Assets/bg-60.png);
 }
@@ -50,7 +59,7 @@ td {
     justify-content: center;
     align-items: center;
     background: url(../../Assets/bg-60.png);
-    height: 420px;
+    height: 480px;
     max-height: calc(100vh - 100px);
     width: 350px;
     max-width: calc(100vw - 30px);
@@ -101,6 +110,16 @@ td {
 
 .header-information {
     padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-information {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
 }
 
 .logo-wrapper {
@@ -109,6 +128,12 @@ td {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
 }
 
 .disclaimer {

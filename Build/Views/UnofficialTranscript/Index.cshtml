@@ -21,6 +21,12 @@
             Unofficial Transcript
         </h2>
     </div>
+    @* Uncomment this when pdf is complete *@
+    @*<div class="buttons" id="pdf-btn">
+        <a value="Generate PDF" style="cursor:pointer; padding: 5px;">
+            <img class="print-icon-white" src="~/Assets/Icons/svg/print-white.svg" alt="Print" height="25"/>
+        </a>
+    </div>*@
 </div>
 @if (Model.HasQuarters)
 {
@@ -28,7 +34,7 @@
         Sinclair Community College has operated on the semester system since August 2012. All credit hours earned prior to August 2012 have been converted to semester hours.
     </div>
 }
-<div class="flex-wrapper">
+<div class="flex-wrapper @($"disclaimer-{Model.HasQuarters}")">
     <div class="sticky-sidebar">
         <div>
             <h4 style="font-weight: bold">Grades</h4>
@@ -149,12 +155,13 @@
                                     if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
                                     {
                                         <div class="tooltip-wrapper">
-                                            @course.GradeInfo.DisplayGrade
                                             @if (!string.IsNullOrEmpty(course.GradeInfo.Symbol))
                                             {
-                                                <span>
-                                                    @course.GradeInfo.Symbol
-                                                </span>
+                                                @course.GradeInfo.DisplayGrade @course.GradeInfo.Symbol
+                                            }
+                                            else
+                                            {
+                                                @course.GradeInfo.DisplayGrade
                                             }
                                             <span class="tooltip-text">
                                                 @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
@@ -212,3 +219,27 @@
         </table>
     </div>
 </div>
+
+<div class="footer-information sinclair-red">
+
+</div>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $('#pdf-btn').click(function () {
+        console.log(@Html.Raw(Json.Encode(Model)))
+        $.ajax({
+            url: '/UnofficialTranscript/GeneratePDF',
+            type: "POST",
+            data: {
+                academicData: @Html.Raw(Json.Encode(Model))
+            },
+            datatype: "json",
+            success: function (data) {
+                var fileName = JSON.parse(data);
+                var fileURL = "/Output/" + fileName['file'];
+                window.open(fileURL);
+            }
+        });
+    });
+</script>
