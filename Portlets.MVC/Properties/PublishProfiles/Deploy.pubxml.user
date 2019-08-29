@@ -730,16 +730,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>07/02/2019 11:41:26</publishTime>
+      <publishTime>08/29/2019 09:58:39</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>07/02/2019 11:41:26</publishTime>
+      <publishTime>08/29/2019 09:58:39</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
-      <publishTime>07/02/2019 10:58:53</publishTime>
+      <publishTime>08/29/2019 09:58:38</publishTime>
     </File>
     <File Include="bin/Portlets.Service.pdb">
-      <publishTime>07/02/2019 10:58:53</publishTime>
+      <publishTime>08/29/2019 09:58:38</publishTime>
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>02/27/2019 20:13:34</publishTime>
@@ -984,11 +984,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>06/20/2019 14:23:24</publishTime>
     </File>
+    <File Include="Content/DefaultJSON/DegreeAudit.json">
+      <publishTime>08/22/2019 09:23:13</publishTime>
+    </File>
     <File Include="Content/Individual_Views/Booklist.css">
       <publishTime>06/03/2019 11:11:49</publishTime>
     </File>
     <File Include="Content/Individual_Views/ClassSchedule.css">
       <publishTime>06/03/2019 15:53:31</publishTime>
+    </File>
+    <File Include="Content/Individual_Views/DegreeAudit.css">
+      <publishTime>08/27/2019 12:28:13</publishTime>
     </File>
     <File Include="Content/Individual_Views/ImportantDates.css">
       <publishTime>06/10/2019 15:28:55</publishTime>
@@ -1188,6 +1194,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/umd/popper.min.js.map">
       <publishTime>06/20/2019 14:23:24</publishTime>
     </File>
+    <File Include="Views/DegreeAudit/Index.cshtml">
+      <publishTime>08/27/2019 12:33:32</publishTime>
+    </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
@@ -1216,7 +1225,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 16:53:08</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
-      <publishTime>06/05/2019 09:59:59</publishTime>
+      <publishTime>08/29/2019 09:57:49</publishTime>
     </File>
     <File Include="Views/Portlet/BookList.cshtml">
       <publishTime>06/04/2019 12:04:56</publishTime>
@@ -1237,13 +1246,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 14:42:42</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/02/2019 11:40:56</publishTime>
+      <publishTime>08/26/2019 12:29:07</publishTime>
     </File>
     <File Include="Views/Styles/main.css">
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>07/02/2019 10:55:08</publishTime>
+      <publishTime>07/02/2019 13:42:23</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>

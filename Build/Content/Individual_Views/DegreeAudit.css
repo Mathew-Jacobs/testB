@@ -1,0 +1,16 @@
+﻿.upfront-data {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gpaMet {
+    background: lightgreen;
+}
+
+.notMet {
+    background: lightcoral;
+}

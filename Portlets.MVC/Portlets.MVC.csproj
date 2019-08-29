@@ -113,6 +113,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -180,6 +181,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DegreeAuditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OldPortletController.cs" />
     <Compile Include="Controllers\PortletController.cs" />
@@ -189,6 +191,8 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Models\AcademicCredit.cs" />
+    <Compile Include="Models\DataPoint.cs" />
+    <Compile Include="Models\DegreeAuditObject.cs" />
     <Compile Include="Models\Events.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\FinancialAidChecklist.cs" />
@@ -439,6 +443,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Individual_Views\DegreeAudit.css" />
     <Content Include="Content\Individual_Views_Old\Booklist.css" />
     <Content Include="Content\Individual_Views_Old\ClassSchedule.css" />
     <Content Include="Content\Individual_Views_Old\ImportantDates.css" />
@@ -458,6 +463,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\DefaultJSON\DegreeAudit.json" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
@@ -537,6 +543,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\DegreeAudit\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,91 @@
+﻿@model Portlets.MVC.Models.DegreeAuditObject
+
+@{
+    ViewBag.Title = "Index";
+    var program_gpa_met = (Model.SASTableData[0].Program_Minimum_GPA_Ct <= Model.SASTableData[0].PROGPA);
+    var institution_gpa_met = (Model.SASTableData[0].Institution_Min_GPA_Ct <= Model.SASTableData[0].CUMGPA);
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/DegreeAudit.css" />
+
+<div class="upfront-data">
+    <div id="chartContainer" style="width: 400px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div style="width: 400px; height: 200px; border: 1px solid #e6e6e6">
+        <table style="width: 100%;">
+            <caption style="display: table-caption; text-align: center; caption-side: top">GPA Requirements</caption>
+            <tbody>
+                <tr class="@(program_gpa_met ? "gpaMet":"notMet")">
+                    <td>Program GPA: @Model.SASTableData[0].Program_Minimum_GPA_Ct.ToString("0.00")</td>
+                    <td>Your Program GPA: @Math.Round(Model.SASTableData[0].PROGPA, 2).ToString("0.00")</td>
+                </tr>
+                <tr class="@(institution_gpa_met ? "gpaMet":"notMet")">
+                    <td>Institution GPA: @Model.SASTableData[0].Institution_Min_GPA_Ct.ToString("0.00")</td>
+                    <td>Your Institution GPA: @Math.Round(Model.SASTableData[0].CUMGPA, 2).ToString("0.00")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+        var ctx = document.getElementById('myChart');
+        var block_labels = ['Blocks complete', 'Blocks left'];
+        var block_dataset = [@Model.SASTableData[0].blocks_met, @Model.SASTableData[0].total_blocks-@Model.SASTableData[0].blocks_met];
+        var course_labels = ['Courses complete', 'Courses left'];
+        var course_dataset = [30, 3];
+        var chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Complete', 'Left'],
+                datasets: [
+                    {
+                        data: block_dataset,
+                        backgroundColor: [
+                            '#e0ffe5',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            '#70d481',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1,
+                        label: ['Blocks Complete', 'Blocks Left']
+                    },
+                    {
+                        data: course_dataset,
+                        backgroundColor: [
+                            '#e0ffe5',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            '#70d481',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1,
+                        label: ['Courses Complete', 'Courses Left']
+                    }
+                ]
+            },
+            options: {
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (item, data) {
+                            return data.datasets[item.datasetIndex].label[item.index] + ': ' + data.datasets[item.datasetIndex].data[item.index];
+                        }
+                    }
+                },
+                plugins: {
+                    labels: {
+                        render: 'percentage',
+                        precision: 0,
+                    }
+                }
+            }
+        });
+</script>
