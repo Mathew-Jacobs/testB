@@ -39,6 +39,7 @@ namespace Portlets.MVC.Models
         public bool IsCompletedCredit { get; set; }
         public string ReplacedStatus { get; set; }
         public string ReplacementStatus { get; set; }
+        public string Note { get; set; }
     }
 
     public class AcademicTerm

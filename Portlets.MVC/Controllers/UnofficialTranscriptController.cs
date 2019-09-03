@@ -54,6 +54,46 @@ namespace Portlets.MVC.Controllers
             obj = CombineSummers(obj);
             obj = OrderByTerm(obj);
             var grades = GetGrades(bearerToken);
+            var creditIDs = new List<string>();
+            foreach (var term in obj.AcademicTerms)
+            {
+                foreach (var credit in term.AcademicCredits)
+                {
+                    creditIDs.Add(credit.Id);
+                }
+            }
+
+            RequestHeader[] noteHeaders =
+            {
+                new RequestHeader() { Key = "Content-Type", Value = "application/json" }
+            };
+
+            var noteResponse = utility.CreateRequest(Method.POST, "https://apitest.sinclair.edu/portlet/api", $"coursefinalnotes", noteHeaders, creditIDs);
+
+            if (noteResponse.IsSuccessful)
+            {
+                dynamic noteJsonContent = JValue.Parse(noteResponse.Content);
+                List<CourseFinalNote> helperObj = noteJsonContent.ToObject<List<CourseFinalNote>>();
+
+                foreach (var note in helperObj)
+                {
+                    foreach (var term in obj.AcademicTerms)
+                    {
+                        foreach (var course in term.AcademicCredits)
+                        {
+                            if (note.studentAcadCredKey == course.Id)
+                            {
+                                course.Note = note.scsFinalNote;
+                                if (course.Note == "MR")
+                                {
+                                    course.ReplacedStatus = "Replaced";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             obj = CalculateGPA(obj, grades);
             return View(obj);
         }

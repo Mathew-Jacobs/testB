@@ -1,9 +1,12 @@
-﻿@model Portlets.MVC.Models.DegreeAuditObject
+﻿@model List<Portlets.MVC.Models.DegreeAuditBlock>
 
 @{
     ViewBag.Title = "Index";
-    var program_gpa_met = (Model.SASTableData[0].Program_Minimum_GPA_Ct <= Model.SASTableData[0].PROGPA);
-    var institution_gpa_met = (Model.SASTableData[0].Institution_Min_GPA_Ct <= Model.SASTableData[0].CUMGPA);
+    var totalBlocks = Model.Count;
+    var metBlocks = Model.Where(x => x.Block_Met == true).ToList().Count;
+    
+    //var program_gpa_met = (Model.SASTableData[0].Program_Minimum_GPA_Ct <= Model.SASTableData[0].PROGPA);
+    //var institution_gpa_met = (Model.SASTableData[0].Institution_Min_GPA_Ct <= Model.SASTableData[0].CUMGPA);
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/DegreeAudit.css" />
@@ -16,14 +19,14 @@
         <table style="width: 100%;">
             <caption style="display: table-caption; text-align: center; caption-side: top">GPA Requirements</caption>
             <tbody>
-                <tr class="@(program_gpa_met ? "gpaMet":"notMet")">
+                @*<tr class="@(program_gpa_met ? "gpaMet":"notMet")">
                     <td>Program GPA: @Model.SASTableData[0].Program_Minimum_GPA_Ct.ToString("0.00")</td>
                     <td>Your Program GPA: @Math.Round(Model.SASTableData[0].PROGPA, 2).ToString("0.00")</td>
                 </tr>
                 <tr class="@(institution_gpa_met ? "gpaMet":"notMet")">
                     <td>Institution GPA: @Model.SASTableData[0].Institution_Min_GPA_Ct.ToString("0.00")</td>
                     <td>Your Institution GPA: @Math.Round(Model.SASTableData[0].CUMGPA, 2).ToString("0.00")</td>
-                </tr>
+                </tr>*@
             </tbody>
         </table>
     </div>
@@ -31,7 +34,7 @@
 <script type="text/javascript">
         var ctx = document.getElementById('myChart');
         var block_labels = ['Blocks complete', 'Blocks left'];
-        var block_dataset = [@Model.SASTableData[0].blocks_met, @Model.SASTableData[0].total_blocks-@Model.SASTableData[0].blocks_met];
+        var block_dataset = [@metBlocks, @totalBlocks-@metBlocks];
         var course_labels = ['Courses complete', 'Courses left'];
         var course_dataset = [30, 3];
         var chart = new Chart(ctx, {

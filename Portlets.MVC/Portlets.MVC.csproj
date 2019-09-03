@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Models\AcademicCredit.cs" />
+    <Compile Include="Models\CourseFinalNote.cs" />
     <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\DegreeAuditObject.cs" />
     <Compile Include="Models\Events.cs" />
