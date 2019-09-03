@@ -730,10 +730,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>08/29/2019 09:58:39</publishTime>
+      <publishTime>09/03/2019 11:40:36</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>08/29/2019 09:58:39</publishTime>
+      <publishTime>09/03/2019 11:40:36</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>08/29/2019 09:58:38</publishTime>
@@ -985,7 +985,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2019 14:23:24</publishTime>
     </File>
     <File Include="Content/DefaultJSON/DegreeAudit.json">
-      <publishTime>08/22/2019 09:23:13</publishTime>
+      <publishTime>08/29/2019 11:08:37</publishTime>
     </File>
     <File Include="Content/Individual_Views/Booklist.css">
       <publishTime>06/03/2019 11:11:49</publishTime>
@@ -1195,7 +1195,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2019 14:23:24</publishTime>
     </File>
     <File Include="Views/DegreeAudit/Index.cshtml">
-      <publishTime>08/27/2019 12:33:32</publishTime>
+      <publishTime>08/29/2019 13:33:18</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
