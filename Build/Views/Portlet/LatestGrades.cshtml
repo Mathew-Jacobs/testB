@@ -11,6 +11,9 @@
     {
         latestTerm = Model.AcademicTerms[lastTerm - 1];
     }
+    var gradesForGPA = new List<string>() {
+        "A", "B", "C", "D", "F", "Z"
+    };
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/Latest-Grades.css" />
@@ -40,7 +43,31 @@
                     <td>@course.CourseName</td>
                     <td style="max-width: 145px">@course.Title</td>
                     <td style="text-align: center">@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
-                    <td style="text-align: center">@course.VerifiedGradeId</td>
+                    <td style="text-align: center">
+                        @if (course.GradeInfo != null)
+                        {
+                            if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
+                            {
+                                <div class="tooltip-wrapper">
+                                    @if (!string.IsNullOrEmpty(course.GradeInfo.Symbol))
+                                    {
+                                        @course.GradeInfo.DisplayGrade @course.GradeInfo.Symbol
+                                    }
+                                    else
+                                    {
+                                        @course.GradeInfo.DisplayGrade
+                                    }
+                                    <span class="tooltip-text">
+                                        @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
+                                    </span>
+                                </div>
+                            }
+                            else
+                            {
+                                @course.GradeInfo.DisplayGrade
+                            }
+                        }
+                    </td>
                 </tr>
             }
         </tbody>

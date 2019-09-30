@@ -61,6 +61,8 @@ namespace Portlets.MVC.Models
         public int? Block_ID { get; set; }
         public string Block_Label { get; set; }
         public bool Block_Met { get; set; }
+        public int? Credits_Left { get; set; }
+        public int? Credits_Earned { get; set; }
         public List<DegreeAuditCourse> Courses { get; set; }
     }
 }

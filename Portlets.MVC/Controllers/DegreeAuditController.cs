@@ -34,8 +34,11 @@ namespace Portlets.MVC.Controllers
             }
             foreach (var block in obj)
             {
+                block.Credits_Earned = 0;
                 foreach (var item in model.Where(x => x.Parent_Block_Counter_Id == block.Block_ID))
                 {
+                    block.Credits_Earned += item.Sem_Credit_Hours_Earned_Ct;
+                    block.Credits_Left = item.credits_left;
                     block.Courses.Add(new DegreeAuditCourse
                     {
                         Course_Name = item.course_nm_s,

@@ -1,6 +1,6 @@
 ﻿body {
     position: relative;
-    background-image: url(../../Assets/CheckeredBg.png);
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.75)), url(../../Assets/CheckeredBg.png);
     background-attachment: fixed;
     background-size: 2900px;
     min-height: 100vh;

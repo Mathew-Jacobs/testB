@@ -37,7 +37,6 @@ namespace Portlets.MVC.Controllers
                 }
             }
 
-
             string bearerToken = admin.Login();
 
             RequestHeader[] headers =
@@ -689,12 +688,12 @@ namespace Portlets.MVC.Controllers
 
             pageSetup.TF.Alignment = XParagraphAlignment.Left;
             rect = new XRect(courseNameX, pageSetup.TotalHeight, courseTitleX - courseNameX, 100);
-            pageSetup.TF.PrepareDrawString($"Cum GPA", font, rect, out lastCharIndex, out neededHeight);
+            pageSetup.TF.PrepareDrawString($"Cumulative GPA", font, rect, out lastCharIndex, out neededHeight);
             if (!pageSetup.TF._preparedText)
             {
                 pageSetup.TF.Alignment = XParagraphAlignment.Left;
                 rect = new XRect(courseNameX, pageSetup.TotalHeight, courseTitleX - courseNameX, 100);
-                pageSetup.TF.PrepareDrawString($"Cum GPA", font, rect, out lastCharIndex, out neededHeight);
+                pageSetup.TF.PrepareDrawString($"Cumulative GPA", font, rect, out lastCharIndex, out neededHeight);
             }
             pageSetup.TF.DrawString(XBrushes.Black);
 
@@ -711,12 +710,12 @@ namespace Portlets.MVC.Controllers
 
             pageSetup.TF.Alignment = XParagraphAlignment.Right;
             rect = new XRect(courseTitleX, pageSetup.TotalHeight, attCredX - courseTitleX, 100);
-            pageSetup.TF.PrepareDrawString($"Cum Total", font, rect, out lastCharIndex, out neededHeight);
+            pageSetup.TF.PrepareDrawString($"Cumulative Total", font, rect, out lastCharIndex, out neededHeight);
             if (!pageSetup.TF._preparedText)
             {
                 pageSetup.TF.Alignment = XParagraphAlignment.Right;
                 rect = new XRect(courseTitleX, pageSetup.TotalHeight, attCredX - courseTitleX, 100);
-                pageSetup.TF.PrepareDrawString($"Cum Total", font, rect, out lastCharIndex, out neededHeight);
+                pageSetup.TF.PrepareDrawString($"Cumulative Total", font, rect, out lastCharIndex, out neededHeight);
             }
             pageSetup.TF.DrawString(XBrushes.Black);
 
@@ -772,7 +771,7 @@ namespace Portlets.MVC.Controllers
             pageSetup.TotalHeight += 10;
             MemoryStream ms = new MemoryStream();
             string path = Server.MapPath("/Output/");
-            string fileName = "Sample.pdf";
+            string fileName = "UnofficialTranscript.pdf";
             pageSetup.Pdf.Save(path + fileName);
             pageSetup.Pdf.Close();
 

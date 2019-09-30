@@ -7,10 +7,48 @@
     margin: 0 auto;
 }
 
-.gpaMet {
-    background: lightgreen;
+.blocks {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
-.notMet {
-    background: lightcoral;
+.block {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.block-header {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.status {
+    margin: 0 10px;
+}
+
+.status.met {
+    color: green;
+}
+
+.status.not-met {
+    color: red;
+}
+
+.sub-block {
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.sub-block:last-child {
+    margin-bottom: 0px;
+}
+
+.specification {
+    border-bottom: 1px solid #cccccc;
 }
