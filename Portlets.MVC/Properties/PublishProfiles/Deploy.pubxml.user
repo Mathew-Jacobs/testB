@@ -730,10 +730,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>09/30/2019 14:08:52</publishTime>
+      <publishTime>09/30/2019 15:05:27</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>09/30/2019 14:08:52</publishTime>
+      <publishTime>09/30/2019 15:05:27</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>09/30/2019 13:27:27</publishTime>
@@ -1252,7 +1252,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>09/30/2019 13:57:53</publishTime>
+      <publishTime>09/30/2019 15:05:18</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>
