@@ -1,0 +1,29 @@
+﻿body {
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.schedule-striper {
+    width: 100%;
+}
+
+.course-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 15px;
+}
+
+    .course-row:nth-child(odd) {
+        background-color: #e6e6e6;
+    }
+
+    .course-row > div > div {
+        margin-bottom: 7px;
+    }
+
+    .course-row > div > div:last-child {
+        margin-bottom: 0;
+    }

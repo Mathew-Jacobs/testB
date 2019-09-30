@@ -39,10 +39,12 @@ namespace Portlets.MVC.Models
         public bool IsCompletedCredit { get; set; }
         public string ReplacedStatus { get; set; }
         public string ReplacementStatus { get; set; }
+        public string Note { get; set; }
     }
 
     public class AcademicTerm
     {
+        private bool incl = true;
         public string TermId { get; set; }
         public string TermSeason
         {
@@ -118,6 +120,10 @@ namespace Portlets.MVC.Models
         public double GradePointAverage { get; set; }
         public double Credits { get; set; }
         public int ContinuingEducationUnits { get; set; }
+        public bool FreshStart { get; set; }
+        public bool Included { get { return incl; } set { incl = value; } }
+        public double GPACredits { get; set; }
+        public double GradePoints { get; set; }
         public List<AcademicCredit> AcademicCredits { get; set; }
     }
 
@@ -180,8 +186,29 @@ namespace Portlets.MVC.Models
             }
         }
         public double PossibleCredits { get; set; }
+        public double CreditsEarned
+        {
+            get
+            {
+                var cred = 0d;
+                foreach (var term in AcademicTerms)
+                {
+                    foreach (var credit in term.AcademicCredits)
+                    {
+                        if (credit.GradeInfo != null)
+                        {
+                            if (credit.GradeInfo.Symbol != ":" && credit.GradeInfo.Symbol != "//")
+                            {
+                                cred += credit.CompletedCredit;
+                            }
+                        }
+                    }
+                }
+                return cred;
+            }
+        }
         public double CalculatedGPA { get; set; }
-        public object StudentId { get; set; }
+        public string StudentId { get; set; }
 
 
     }

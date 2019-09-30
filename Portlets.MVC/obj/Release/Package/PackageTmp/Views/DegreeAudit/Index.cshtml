@@ -1,0 +1,139 @@
+﻿@model List<Portlets.MVC.Models.DegreeAuditBlock>
+
+@{
+    ViewBag.Title = "Index";
+    var totalBlocks = Model.Count;
+    var metBlocks = Model.Where(x => x.Block_Met == true).ToList().Count;
+    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    var leftCredits = 0;
+    var metCredits = 0;
+
+    foreach (var item in Model)
+    {
+        leftCredits += item.Credits_Left.GetValueOrDefault();
+        metCredits += item.Credits_Earned.GetValueOrDefault();
+    }
+    //var program_gpa_met = (Model.SASTableData[0].Program_Minimum_GPA_Ct <= Model.SASTableData[0].PROGPA);
+    //var institution_gpa_met = (Model.SASTableData[0].Institution_Min_GPA_Ct <= Model.SASTableData[0].CUMGPA);
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/DegreeAudit.css" />
+<div style="text-align: center">
+    <div>Sinclair Community College</div>
+    <div>Academic Evaluation</div>
+    <div class="small">Report Date: @DateTime.Now.ToShortDateString()</div>
+</div>
+<div class="upfront-data">
+    <div id="chartContainer" style="width: 400px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div style="width: 400px; height: 200px; border: 1px solid #e6e6e6">
+        <table style="width: 100%;">
+            <caption style="display: table-caption; text-align: center; caption-side: top">GPA Requirements</caption>
+            <tbody>
+                @*<tr class="@(program_gpa_met ? "gpaMet":"notMet")">
+                        <td>Program GPA: @Model.SASTableData[0].Program_Minimum_GPA_Ct.ToString("0.00")</td>
+                        <td>Your Program GPA: @Math.Round(Model.SASTableData[0].PROGPA, 2).ToString("0.00")</td>
+                    </tr>
+                    <tr class="@(institution_gpa_met ? "gpaMet":"notMet")">
+                        <td>Institution GPA: @Model.SASTableData[0].Institution_Min_GPA_Ct.ToString("0.00")</td>
+                        <td>Your Institution GPA: @Math.Round(Model.SASTableData[0].CUMGPA, 2).ToString("0.00")</td>
+                    </tr>*@
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="blocks">
+    @foreach (var block in Model)
+    {
+        <div class="block">
+            <div class="block-header">
+                <h4 style="font-weight: bold">@block.Block_Label</h4>
+                <div class="status @(block.Block_Met ? "met" : "not-met")">@(block.Block_Met ? "(Complete)" : "(Not Complete)")</div>
+            </div>
+            @if (block.Credits_Earned != null && block.Credits_Left != null)
+            {
+                <div>Credits Earned: @block.Credits_Earned</div>
+                <div>Credits Left: @block.Credits_Left</div>
+            }
+            <div class="block-courses">
+                @foreach (var course in block.Courses)
+                {
+                    <div class="sub-block">
+                        <div class="specification" style="font-weight:bold">
+                            @alphabet[block.Courses.IndexOf(course)]
+                            @if (!String.IsNullOrEmpty(course.Specification))
+                            {
+                                <span class="small">@course.Specification</span>
+                            }
+                        </div>
+                        <div class="course-row">
+                            @course.Course_Name @course.Course_Title
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+        var ctx = document.getElementById('myChart');
+        var block_labels = ['Blocks complete', 'Blocks left'];
+        var block_dataset = [@metBlocks, @totalBlocks-@metBlocks];
+        var course_labels = ['Credits complete', 'Credits left'];
+        var course_dataset = [@metCredits, @leftCredits];
+        var chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Complete', 'Left'],
+                datasets: [
+                    {
+                        data: block_dataset,
+                        backgroundColor: [
+                            '#e0ffe5',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            '#70d481',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1,
+                        label: ['Blocks Complete', 'Blocks Left']
+                    },
+                    {
+                        data: course_dataset,
+                        backgroundColor: [
+                            '#e0ffe5',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            '#70d481',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1,
+                        label: ['Credits Complete', 'Credits Left']
+                    }
+                ]
+            },
+            options: {
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (item, data) {
+                            return data.datasets[item.datasetIndex].label[item.index] + ': ' + data.datasets[item.datasetIndex].data[item.index];
+                        }
+                    }
+                },
+                plugins: {
+                    labels: {
+                        render: 'percentage',
+                        precision: 0,
+                    }
+                }
+            }
+        });
+</script>

@@ -1,0 +1,92 @@
+﻿@model List<Portlets.MVC.Models.Term>
+
+@{
+    ViewBag.Title = "ImportantDates";
+    List<Portlets.MVC.Models.ImportantDate> importantDates = new List<Portlets.MVC.Models.ImportantDate>();
+    foreach (var term in Model)
+    {
+        foreach (var registrationDate in term.RegistrationDates)
+        {
+            Portlets.MVC.Models.ImportantDate earlyReg = new Portlets.MVC.Models.ImportantDate();
+            earlyReg.Date = registrationDate.RegistrationStartDate;
+            earlyReg.Title = $"Early Registration Begins";
+            earlyReg.Description = $"{term.Description}";
+            importantDates.Add(earlyReg);
+            Portlets.MVC.Models.ImportantDate regEnd = new Portlets.MVC.Models.ImportantDate();
+            regEnd.Date = registrationDate.RegistrationEndDate;
+            regEnd.Title = $"Registration Ends";
+            regEnd.Description = $"{term.Description}";
+            importantDates.Add(regEnd);
+            Portlets.MVC.Models.ImportantDate classesStart = new Portlets.MVC.Models.ImportantDate();
+            classesStart.Date = term.StartDate;
+            classesStart.Title = $"Classes Begin";
+            classesStart.Description = $"{term.Description}";
+            importantDates.Add(classesStart);
+            Portlets.MVC.Models.ImportantDate withdrawWRe = new Portlets.MVC.Models.ImportantDate();
+            withdrawWRe.Date = registrationDate.DropGradeRequiredDate;
+            withdrawWRe.Title = "Last Day To Withdraw With Refund and Without Record";
+            withdrawWRe.Description = $"{term.Description}";
+            importantDates.Add(withdrawWRe);
+            Portlets.MVC.Models.ImportantDate withdraw = new Portlets.MVC.Models.ImportantDate();
+            withdraw.Date = registrationDate.DropEndDate;
+            withdraw.Title = "Last Day To Withdraw";
+            withdraw.Description = $"{term.Description}";
+            importantDates.Add(withdraw);
+            Portlets.MVC.Models.ImportantDate classesEnd = new Portlets.MVC.Models.ImportantDate();
+            classesEnd.Date = term.EndDate;
+            classesEnd.Title = "Classes End";
+            classesEnd.Description = $"{term.Description}";
+            importantDates.Add(classesEnd);
+            Portlets.MVC.Models.ImportantDate onTimeRegEnd = new Portlets.MVC.Models.ImportantDate();
+            onTimeRegEnd.Date = registrationDate.RegistrationEndDate.AddDays(-6);
+            onTimeRegEnd.Title = "On Time Registration Ends";
+            onTimeRegEnd.Description = $"{term.Description}";
+            importantDates.Add(onTimeRegEnd);
+        }
+    }
+    foreach (var date in importantDates)
+    {
+        if (date.Date < DateTime.Now)
+        {
+            date.Display = false;
+        }
+        else
+        {
+            date.Display = true;
+        }
+    }
+    importantDates.Sort((a, b) => { return a.Date.CompareTo(b.Date); });
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Individual_Views/ImportantDates.css" />
+
+<div style="width: 335px;">
+    @foreach (var date in importantDates)
+    {
+        if (date.Display)
+        {
+            <div class="important-row">
+                <div style="max-width: 65%;">
+                    <div class="title-wrapper">
+                        <div style="padding-right: 5px;">
+                            <img src="~/Assets/Icons/svg/calendar.svg" alt="calendar" />
+                        </div>
+                        <div>
+                            <div style="font-weight: bold;">
+                                @date.Title
+                            </div>
+                            <div style="font-size: 85%; color: #6f7276">
+                                @date.Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-weight: bold;">
+                        @date.Date.ToString("ddd MMM d")
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.important-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 15px;
+    margin-bottom: 5px;
+}
+
+.title-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+}
