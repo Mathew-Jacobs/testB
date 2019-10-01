@@ -730,10 +730,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>09/30/2019 15:46:10</publishTime>
+      <publishTime>10/01/2019 10:31:39</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>09/30/2019 15:46:10</publishTime>
+      <publishTime>10/01/2019 10:31:39</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>09/30/2019 13:27:27</publishTime>
@@ -1000,7 +1000,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:28:55</publishTime>
     </File>
     <File Include="Content/Individual_Views/Latest-Grades.css">
-      <publishTime>09/30/2019 12:01:41</publishTime>
+      <publishTime>10/01/2019 10:28:51</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
       <publishTime>09/03/2019 12:10:29</publishTime>
@@ -1015,7 +1015,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 14:03:55</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Latest-Grades.css">
-      <publishTime>09/30/2019 15:46:02</publishTime>
+      <publishTime>10/01/2019 10:24:52</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Unofficial-Transcript.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
@@ -1222,7 +1222,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 11:13:02</publishTime>
     </File>
     <File Include="Views/OldPortlet/LatestGrades.cshtml">
-      <publishTime>09/30/2019 15:42:17</publishTime>
+      <publishTime>10/01/2019 10:28:06</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
       <publishTime>08/29/2019 09:57:49</publishTime>
@@ -1240,7 +1240,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:29:58</publishTime>
     </File>
     <File Include="Views/Portlet/LatestGrades.cshtml">
-      <publishTime>09/30/2019 11:58:14</publishTime>
+      <publishTime>10/01/2019 10:29:25</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
