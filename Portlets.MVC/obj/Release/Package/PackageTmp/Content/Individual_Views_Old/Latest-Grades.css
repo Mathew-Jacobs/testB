@@ -26,7 +26,7 @@ tr th:last-child {
 
 .flex-table {
     width: 100%;
-    height: 100%;
+    height: 130px;
     display: flex;
     flex-direction: column;
 }
