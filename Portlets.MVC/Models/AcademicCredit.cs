@@ -166,6 +166,7 @@ namespace Portlets.MVC.Models
 
     public class AcademicData
     {
+        public Student StudentData { get; set; }
         public List<AcademicTerm> AcademicTerms { get; set; }
         public List<NonTermAcademicCredit> NonTermAcademicCredits { get; set; }
         public GradeRestriction GradeRestriction { get; set; }

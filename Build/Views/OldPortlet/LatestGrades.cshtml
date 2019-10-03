@@ -11,22 +11,24 @@
     {
         latestTerm = Model.AcademicTerms[lastTerm - 1];
     }
+    var gradesForGPA = new List<string>() {
+        "A", "B", "C", "D", "F", "Z"
+    };
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/Individual_Views_Old/Latest-Grades.css" />
+
 <div style="width: 335px;">
     <table style="width: 100%;">
         <tbody>
-            <tr style="background-color: #e1e3e6; height: 25px; font-weight: bold">
+            <tr style="background-color: #e1e3e6; height: 40px; font-weight: bold">
                 <td style="padding-left: 8px; border: none;">@latestTerm.TermSeason @latestTerm.TermYear</td>
-                <td style="text-align: right; padding-right: 8px; color: #6f7276; border: none;">Term GPA: @Math.Round(latestTerm.GradePointAverage, 2).ToString("0.00")</td>
+                <td style="text-align: right; padding-right: 8px; color: #6f7276; border: none">Term GPA: @Math.Round(latestTerm.GradePointAverage, 2).ToString("0.00")</td>
             </tr>
         </tbody>
     </table>
-</div>
-<div style="width: 335px; height: 145px; overflow-y: auto;"> 
-    <table class="flex-table">
-        <thead>
+    <table style="width: 100%" class="flex-table">
+        <thead class="t-dark-header">
             <tr>
                 <th>Course</th>
                 <th>Title</th>
@@ -39,9 +41,33 @@
             {
                 <tr class="space-around">
                     <td>@course.CourseName</td>
-                    <td>@course.Title</td>
-                    <td>@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
-                    <td>@course.VerifiedGradeId</td>
+                    <td style="max-width: 145px">@course.Title</td>
+                    <td style="text-align: center">@Math.Round(course.CompletedCredit, 2).ToString("0.00")</td>
+                    <td style="text-align: center">
+                        @if (course.GradeInfo != null)
+                        {
+                            if (!gradesForGPA.Contains(course.GradeInfo.LetterGrade))
+                            {
+                                <div class="tooltip-wrapper">
+                                    @if (!string.IsNullOrEmpty(course.GradeInfo.Symbol))
+                                    {
+                                        @course.GradeInfo.DisplayGrade @course.GradeInfo.Symbol
+                                    }
+                                    else
+                                    {
+                                        @course.GradeInfo.DisplayGrade
+                                    }
+                                    <span class="tooltip-text">
+                                        @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(course.GradeInfo.Description.ToLower())
+                                    </span>
+                                </div>
+                            }
+                            else
+                            {
+                                @course.GradeInfo.DisplayGrade
+                            }
+                        }
+                    </td>
                 </tr>
             }
         </tbody>

@@ -730,10 +730,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>09/30/2019 13:27:28</publishTime>
+      <publishTime>10/03/2019 16:02:27</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>09/30/2019 13:27:28</publishTime>
+      <publishTime>10/03/2019 16:02:27</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>09/30/2019 13:27:27</publishTime>
@@ -1000,10 +1000,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:28:55</publishTime>
     </File>
     <File Include="Content/Individual_Views/Latest-Grades.css">
-      <publishTime>09/30/2019 12:01:41</publishTime>
+      <publishTime>10/03/2019 15:03:59</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>09/03/2019 12:10:29</publishTime>
+      <publishTime>10/03/2019 15:48:34</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Booklist.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
@@ -1015,7 +1015,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 14:03:55</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Latest-Grades.css">
-      <publishTime>06/13/2019 16:52:59</publishTime>
+      <publishTime>10/01/2019 11:34:49</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Unofficial-Transcript.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
@@ -1222,7 +1222,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2019 11:13:02</publishTime>
     </File>
     <File Include="Views/OldPortlet/LatestGrades.cshtml">
-      <publishTime>06/13/2019 16:53:08</publishTime>
+      <publishTime>10/01/2019 10:38:52</publishTime>
     </File>
     <File Include="Views/Portlet/AccountSummary.cshtml">
       <publishTime>08/29/2019 09:57:49</publishTime>
@@ -1240,7 +1240,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:29:58</publishTime>
     </File>
     <File Include="Views/Portlet/LatestGrades.cshtml">
-      <publishTime>09/30/2019 11:58:14</publishTime>
+      <publishTime>10/03/2019 14:58:18</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -1252,7 +1252,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>09/30/2019 11:52:57</publishTime>
+      <publishTime>10/03/2019 16:01:25</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>

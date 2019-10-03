@@ -23,10 +23,10 @@
     </div>
     @* Uncomment this when pdf is complete *@
     @*<div class="buttons" id="pdf-btn">
-        <a value="Generate PDF" style="cursor:pointer; padding: 5px;">
-            <img class="print-icon-white" src="~/Assets/Icons/svg/print-white.svg" alt="Print" height="25"/>
-        </a>
-    </div>*@
+            <a value="Generate PDF" style="cursor:pointer; padding: 5px;">
+                <img class="print-icon-white" src="~/Assets/Icons/svg/print-white.svg" alt="Print" height="25" />
+            </a>
+        </div>*@
 </div>
 @if (Model.HasQuarters)
 {
@@ -37,6 +37,28 @@
 <div class="flex-wrapper @($"disclaimer-{Model.HasQuarters}")">
     <div class="sticky-sidebar">
         <div>
+            <div>
+                <div style="display: flex;">
+                    <div style="margin-right: 5px; font-weight: bold">Tartan ID:</div>
+                    <div>@Model.StudentId</div>
+                </div>
+                <div style="display: flex;">
+                    <div style="margin-right: 5px; font-weight: bold">Name:</div>
+                    <div>@Model.StudentData.firstName @Model.StudentData.lastName</div>
+                </div>
+                <div style="display: flex;">
+                    <div style="margin-right: 5px; font-weight: bold">Address:</div>
+                    <div>
+                        <div>@Model.StudentData.address</div>
+                        <div>@Model.StudentData.city @Model.StudentData.state @Model.StudentData.zipCode</div>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div style="margin-right: 5px; font-weight: bold">Date Printed:</div>
+                    <div>@DateTime.Now.ToShortDateString()</div>
+                </div>
+            </div>
+            <hr />
             <h4 style="font-weight: bold">Grades</h4>
             <small>
                 Grades used in the calculation of GPA
@@ -121,6 +143,14 @@
                     </tr>
                 </tbody>
             </table>
+            <hr />
+            <div class="sidebar-buttons">
+                <div class="printer-button" aria-label="Printer Friendly Version" id="pdf-btn">
+                    <a value="Generate PDF" style="cursor:pointer; padding: 5px;">
+                        <img class="print-icon" src="~/Assets/Icons/svg/print.svg" alt="Print" height="25" />
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="transcript-column">
@@ -173,7 +203,7 @@
                                         @course.GradeInfo.DisplayGrade
                                     }
                                 }
-                                else 
+                                else
                                 {
                                     @course.VerifiedGradeId
                                 }

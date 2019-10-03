@@ -59,7 +59,7 @@ td {
     justify-content: center;
     align-items: center;
     background: url(../../Assets/bg-60.png);
-    height: 480px;
+    height: 700px;
     max-height: calc(100vh - 100px);
     width: 350px;
     max-width: calc(100vw - 30px);
@@ -69,6 +69,16 @@ td {
     padding: 0 10px 10px;
     margin: 23px 0 0;
     overflow: auto;
+}
+
+.printer-button {
+    width: 100px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
 }
 
 .tooltip-wrapper {

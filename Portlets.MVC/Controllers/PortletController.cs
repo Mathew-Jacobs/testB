@@ -267,6 +267,10 @@ namespace Portlets.MVC.Controllers
                 { "=", "Course equates to and replaces a previous course" },
                 { ":", "Grade not included in the Fresh Start Policy Calculation" },
             };
+            Dictionary<string, string> gradeDesc = new Dictionary<string, string>()
+            {
+                { "17", "Continuing Education" }
+            };
             var totalPossCredits = 0d;
             var totalGradePoints = 0d;
             foreach (var term in academicData.AcademicTerms)
@@ -301,6 +305,13 @@ namespace Portlets.MVC.Controllers
                         if (symbolDesc.TryGetValue(credit.GradeInfo.Symbol, out string val))
                         {
                             credit.GradeInfo.Description = val;
+                        }
+                        if (credit.VerifiedGradeId != null)
+                        {
+                            if (gradeDesc.TryGetValue(credit.VerifiedGradeId, out string val2))
+                            {
+                                credit.GradeInfo.Description = val2;
+                            }
                         }
                     }
 
@@ -338,7 +349,6 @@ namespace Portlets.MVC.Controllers
                         termGradePoints += credit.GradePoints;
                     }
                 }
-                term.AcademicCredits.RemoveAll(x => (x.GradeInfo.LetterGrade == "CE" || x.GradeInfo.LetterGrade == "L"));
                 term.Credits = termCredit;
                 if (termCredit > 0)
                 {
