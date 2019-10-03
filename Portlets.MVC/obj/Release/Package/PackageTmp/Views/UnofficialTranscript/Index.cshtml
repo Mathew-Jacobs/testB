@@ -39,22 +39,22 @@
         <div>
             <div>
                 <div style="display: flex;">
-                    <div style="margin-right: 5px;">Tartan ID:</div>
+                    <div style="margin-right: 5px; font-weight: bold">Tartan ID:</div>
                     <div>@Model.StudentId</div>
                 </div>
                 <div style="display: flex;">
-                    <div style="margin-right: 5px;">Name:</div>
+                    <div style="margin-right: 5px; font-weight: bold">Name:</div>
                     <div>@Model.StudentData.firstName @Model.StudentData.lastName</div>
                 </div>
                 <div style="display: flex;">
-                    <div style="margin-right: 5px;">Address:</div>
+                    <div style="margin-right: 5px; font-weight: bold">Address:</div>
                     <div>
                         <div>@Model.StudentData.address</div>
                         <div>@Model.StudentData.city @Model.StudentData.state @Model.StudentData.zipCode</div>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <div style="margin-right: 5px;">Date:</div>
+                    <div style="margin-right: 5px; font-weight: bold">Date Printed:</div>
                     <div>@DateTime.Now.ToShortDateString()</div>
                 </div>
             </div>
