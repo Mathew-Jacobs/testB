@@ -53,6 +53,8 @@ namespace Portlets.MVC.Controllers
             obj = CombineSummers(obj);
             obj = OrderByTerm(obj);
             var grades = GetGrades(bearerToken);
+            var student = GetStudent(obj.StudentId);
+            obj.StudentData = student;
             var creditIDs = new List<string>();
             foreach (var term in obj.AcademicTerms)
             {
@@ -290,7 +292,7 @@ namespace Portlets.MVC.Controllers
 
             pageSetup.TF.Alignment = XParagraphAlignment.Right;
             rect = new XRect(pageSetup.PDFPage.Width.Point * 2 / 3, 0, pageSetup.PDFPage.Width.Point * 1 / 3, 100);
-            pageSetup.TF.PrepareDrawString($"Tartan ID: {academicData.StudentId}\n\nDate Printed: {DateTime.Now.ToShortDateString()}", font, rect, out lastCharIndex, out neededHeight);
+            pageSetup.TF.PrepareDrawString($"Tartan ID: {academicData.StudentId}\n\nName: {academicData.StudentData.firstName} {academicData.StudentData.lastName}\n\nAddress: {academicData.StudentData.address}\n\t{academicData.StudentData.city} {academicData.StudentData.state} {academicData.StudentData.zipCode}\n\nDate Printed: {DateTime.Now.ToShortDateString()}", font, rect, out lastCharIndex, out neededHeight);
             if (!pageSetup.TF._preparedText)
             {
 
@@ -785,7 +787,6 @@ namespace Portlets.MVC.Controllers
 
             return academicData;
         }
-
         private AcademicData CombineSummers(AcademicData academicData)
         {
             List<string> validGrades = new List<string>() { "A", "B", "C", "D", "F", "Z" };
@@ -836,7 +837,6 @@ namespace Portlets.MVC.Controllers
 
             return academicData;
         }
-
         private List<Grade> GetGrades(string bearerToken)
         {
             RequestHeader[] headers =
@@ -851,6 +851,20 @@ namespace Portlets.MVC.Controllers
             List<Grade> obj = jsonContent.ToObject<List<Grade>>();
 
             return obj;
+        }
+        private Student GetStudent(string tartanID)
+        {
+            var response = utility.CreateRequest(Method.GET, "https://api.sinclair.edu/portlet/api/", $"studentinfo/{tartanID}");
+            if (response.IsSuccessful)
+            {
+                dynamic jsonContent = JValue.Parse(response.Content);
+                Student student = jsonContent.ToObject<Student>();
+                return student;
+            }
+            else
+            {
+                return null;
+            }
         }
         private AcademicData CalculateGPA(AcademicData academicData, List<Grade> grades)
         {

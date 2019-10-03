@@ -730,10 +730,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/28/2016 14:54:52</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.dll">
-      <publishTime>10/01/2019 11:37:04</publishTime>
+      <publishTime>10/03/2019 15:57:05</publishTime>
     </File>
     <File Include="bin/Portlets.MVC.pdb">
-      <publishTime>10/01/2019 11:37:04</publishTime>
+      <publishTime>10/03/2019 15:57:05</publishTime>
     </File>
     <File Include="bin/Portlets.Service.dll">
       <publishTime>09/30/2019 13:27:27</publishTime>
@@ -1000,10 +1000,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:28:55</publishTime>
     </File>
     <File Include="Content/Individual_Views/Latest-Grades.css">
-      <publishTime>10/01/2019 10:28:51</publishTime>
+      <publishTime>10/03/2019 15:03:59</publishTime>
     </File>
     <File Include="Content/Individual_Views/Unofficial-Transcript.css">
-      <publishTime>09/03/2019 12:10:29</publishTime>
+      <publishTime>10/03/2019 15:48:34</publishTime>
     </File>
     <File Include="Content/Individual_Views_Old/Booklist.css">
       <publishTime>06/13/2019 14:03:55</publishTime>
@@ -1240,7 +1240,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2019 15:29:58</publishTime>
     </File>
     <File Include="Views/Portlet/LatestGrades.cshtml">
-      <publishTime>10/01/2019 10:29:25</publishTime>
+      <publishTime>10/03/2019 14:58:18</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/20/2019 14:42:42</publishTime>
@@ -1252,7 +1252,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2019 16:03:39</publishTime>
     </File>
     <File Include="Views/UnofficialTranscript/Index.cshtml">
-      <publishTime>09/30/2019 15:05:18</publishTime>
+      <publishTime>10/03/2019 15:53:58</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/20/2019 14:42:42</publishTime>
