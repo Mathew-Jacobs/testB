@@ -32,13 +32,13 @@
             <caption style="display: table-caption; text-align: center; caption-side: top">GPA Requirements</caption>
             <tbody>
                 @*<tr class="@(program_gpa_met ? "gpaMet":"notMet")">
-                        <td>Program GPA: @Model.SASTableData[0].Program_Minimum_GPA_Ct.ToString("0.00")</td>
-                        <td>Your Program GPA: @Math.Round(Model.SASTableData[0].PROGPA, 2).ToString("0.00")</td>
-                    </tr>
-                    <tr class="@(institution_gpa_met ? "gpaMet":"notMet")">
-                        <td>Institution GPA: @Model.SASTableData[0].Institution_Min_GPA_Ct.ToString("0.00")</td>
-                        <td>Your Institution GPA: @Math.Round(Model.SASTableData[0].CUMGPA, 2).ToString("0.00")</td>
-                    </tr>*@
+                    <td>Program GPA: @Model.SASTableData[0].Program_Minimum_GPA_Ct.ToString("0.00")</td>
+                    <td>Your Program GPA: @Math.Round(Model.SASTableData[0].PROGPA, 2).ToString("0.00")</td>
+                </tr>
+                <tr class="@(institution_gpa_met ? "gpaMet":"notMet")">
+                    <td>Institution GPA: @Model.SASTableData[0].Institution_Min_GPA_Ct.ToString("0.00")</td>
+                    <td>Your Institution GPA: @Math.Round(Model.SASTableData[0].CUMGPA, 2).ToString("0.00")</td>
+                </tr>*@
             </tbody>
         </table>
     </div>
@@ -47,9 +47,9 @@
     @foreach (var block in Model)
     {
         <div class="block">
-            <div class="block-header">
-                <h4 style="font-weight: bold">@block.Block_Label</h4>
-                <div class="status @(block.Block_Met ? "met" : "not-met")">@(block.Block_Met ? "(Complete)" : "(Not Complete)")</div>
+            <div class="block-header @(block.Block_Met ? "met" : "not-met")">
+                <h6 style="font-weight: bold; margin-bottom:0;">@block.Block_Label</h6>
+                <div class="status">@(block.Block_Met ? "Complete" : "Not Complete")</div>
             </div>
             @if (block.Credits_Earned != null && block.Credits_Left != null)
             {

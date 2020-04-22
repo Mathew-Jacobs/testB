@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj": {}
+    "D:\\repos\\portletmvc\\Portlets.Service\\Portlets.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj": {
+    "D:\\repos\\portletmvc\\Portlets.Service\\Portlets.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj",
+        "projectUniqueName": "D:\\repos\\portletmvc\\Portlets.Service\\Portlets.Service.csproj",
         "projectName": "Portlets.Service",
-        "projectPath": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\Portlets.Service.csproj",
-        "packagesPath": "C:\\Users\\mathew.jacobs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathew.jacobs\\source\\repos\\Portlets\\Portlets.Service\\obj\\",
+        "projectPath": "D:\\repos\\portletmvc\\Portlets.Service\\Portlets.Service.csproj",
+        "packagesPath": "C:\\Users\\mathew\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\portletmvc\\Portlets.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mathew.jacobs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mathew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -47,6 +47,7 @@ namespace Portlets.MVC.Controllers
                         Verified_Grade = item.Verified_Grade_Cd
                     });
                 }
+                block.Courses = block.Courses.OrderBy(o => string.IsNullOrEmpty(o.Specification) ? 1 : 0).ToList();
             }
             return View(obj);
         }

@@ -12,3 +12,9 @@ C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netsta
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csproj.CopyComplete
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.dll
 C:\Users\mathew.jacobs\source\repos\Portlets\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.pdb
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csprojAssemblyReference.cache
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.csproj.CoreCompileInputs.cache
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.AssemblyInfoInputs.cache
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.AssemblyInfo.cs
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.dll
+D:\repos\portletmvc\Portlets.Service\obj\Release\netstandard2.0\Portlets.Service.pdb

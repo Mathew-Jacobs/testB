@@ -1,0 +1,15 @@
+D:\repos\portletmvc\Portlets.Service.Framework\obj\Release\Portlets.Service.Framework.csprojAssemblyReference.cache
+D:\repos\portletmvc\Portlets.Service.Framework\obj\Release\Portlets.Service.Framework.csproj.CoreCompileInputs.cache
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\Portlets.Service.Framework.dll
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\Portlets.Service.Framework.pdb
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\PdfSharp.Charting.dll
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\PdfSharp.dll
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\RestSharp.dll
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\PdfSharp.xml
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\PdfSharp.Charting.xml
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\RestSharp.xml
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\de\PdfSharp.resources.dll
+D:\repos\portletmvc\Portlets.Service.Framework\bin\Release\de\PdfSharp.Charting.resources.dll
+D:\repos\portletmvc\Portlets.Service.Framework\obj\Release\Portlets.Service.Framework.csproj.CopyComplete
+D:\repos\portletmvc\Portlets.Service.Framework\obj\Release\Portlets.Service.Framework.dll
+D:\repos\portletmvc\Portlets.Service.Framework\obj\Release\Portlets.Service.Framework.pdb

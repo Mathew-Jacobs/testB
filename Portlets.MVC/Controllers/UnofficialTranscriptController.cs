@@ -24,6 +24,10 @@ namespace Portlets.MVC.Controllers
         // GET: UnofficialTranscript
         public ActionResult Index(string Id)
         {
+            if (!string.IsNullOrEmpty(Id))
+            {
+                Id = (float.Parse(Id) / 4567).ToString();
+            }
             if (string.IsNullOrEmpty(Id))
             {
                 return HttpNotFound();
@@ -34,6 +38,13 @@ namespace Portlets.MVC.Controllers
                 if (string.IsNullOrEmpty(Id))
                 {
                     return HttpNotFound();
+                }
+            }
+            else if (Id.Length < 7)
+            {
+                while (Id.Length < 7)
+                {
+                    Id = Id.Insert(0,"0");
                 }
             }
 
